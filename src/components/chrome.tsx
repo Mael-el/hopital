@@ -10,10 +10,12 @@ import type { ReactNode } from "react";
 export function Chrome({
   header,
   footer,
+  mobileBar,
   children,
 }: {
   header: ReactNode;
   footer: ReactNode;
+  mobileBar?: ReactNode;
   children: ReactNode;
 }) {
   const pathname = usePathname();
@@ -36,6 +38,13 @@ export function Chrome({
         {children}
       </main>
       {footer}
+      {mobileBar && (
+        <>
+          {/* Espace réservé pour que la barre mobile fixe ne masque rien */}
+          <div aria-hidden="true" className="h-16 lg:hidden" />
+          {mobileBar}
+        </>
+      )}
     </>
   );
 }

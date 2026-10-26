@@ -4,9 +4,11 @@ import type { ReactNode } from "react";
 import "./globals.css";
 
 import { Chrome } from "@/components/chrome";
+import { MobileActionBar } from "@/components/public/mobile-action-bar";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { getSettings } from "@/lib/settings";
+import { SITE_URL } from "@/lib/site";
 
 export const dynamic = "force-dynamic";
 
@@ -25,6 +27,7 @@ const sourceSerif = Source_Serif_4({
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await getSettings();
   return {
+    metadataBase: new URL(SITE_URL),
     title: {
       default: `${settings.hospitalName} — Soins accessibles à Zinvié, Bénin`,
       template: `%s | ${settings.shortName}`,
@@ -93,6 +96,12 @@ export default async function RootLayout({
             />
           }
           footer={<SiteFooter />}
+          mobileBar={
+            <MobileActionBar
+              phone={settings.phone}
+              emergencyPhone={settings.phoneEmergency}
+            />
+          }
         >
           {children}
         </Chrome>
