@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Source_Serif_4 } from "next/font/google";
 import type { ReactNode } from "react";
+import "@fontsource-variable/inter";
+import "@fontsource-variable/source-serif-4";
 import "./globals.css";
 
 import { Chrome } from "@/components/chrome";
@@ -11,18 +12,6 @@ import { getSettings } from "@/lib/settings";
 import { SITE_URL } from "@/lib/site";
 
 export const dynamic = "force-dynamic";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const sourceSerif = Source_Serif_4({
-  subsets: ["latin"],
-  variable: "--font-source-serif",
-  display: "swap",
-});
 
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await getSettings();
@@ -80,10 +69,7 @@ export default async function RootLayout({
   const settings = await getSettings();
 
   return (
-    <html
-      lang="fr"
-      className={`${inter.variable} ${sourceSerif.variable}`}
-    >
+    <html lang="fr">
       <body className="flex min-h-screen flex-col antialiased">
         <Chrome
           header={
