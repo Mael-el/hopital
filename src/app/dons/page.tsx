@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 import { PageHero } from "@/components/breadcrumb";
 import { Icon, type IconName } from "@/components/icons";
@@ -129,12 +130,13 @@ export default async function DonationsPage() {
           </div>
 
           <aside className="space-y-5">
-            <div className="overflow-hidden rounded-[4px]">
-              <img
+            <div className="relative h-48 overflow-hidden rounded-[4px] bg-sand-100">
+              <Image
                 src="/images/dons-solidarite.jpg"
                 alt="Accompagnement d'un patient par l'équipe soignante"
-                className="h-48 w-full object-cover"
-                loading="lazy"
+                fill
+                sizes="(max-width: 1024px) 100vw, 33vw"
+                className="object-cover"
               />
             </div>
 
@@ -181,7 +183,7 @@ export default async function DonationsPage() {
                 </li>
                 <li className="flex gap-2">
                   <Icon name="check" className="mt-0.5 h-4 w-4 text-brand-600" />
-                  Signaler un patient ayant besoin d'une chirurgie
+                  Signaler un patient ayant besoin d&rsquo;une chirurgie
                 </li>
               </ul>
             </div>

@@ -29,7 +29,7 @@ export default async function AdminSettingsPage() {
 
       <form action={updateSettings} className="space-y-6">
         <section className="rounded-[3px] border border-slate-200 bg-white p-6">
-          <h2 className="font-bold text-slate-800">Identité de l'établissement</h2>
+          <h2 className="font-bold text-slate-800">Identité de l&rsquo;établissement</h2>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             <Field
               label="Nom de l'hôpital"
@@ -230,7 +230,7 @@ export default async function AdminSettingsPage() {
       </form>
 
       <section className="rounded-[3px] border border-slate-200 bg-white p-6">
-        <h2 className="font-bold text-slate-800">Besoins de l'hôpital</h2>
+        <h2 className="font-bold text-slate-800">Besoins de l&rsquo;hôpital</h2>
         <p className="mt-1 text-sm text-slate-600">
           Ces besoins sont affichés sur la page « Faire un don ».
         </p>

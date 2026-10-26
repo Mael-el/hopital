@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 import { PageHero } from "@/components/breadcrumb";
@@ -311,12 +312,15 @@ export default async function ContactPage() {
 
             {/* Plan d'accès */}
             <div className="card overflow-hidden">
-              <img
-                src="/images/hero-hopital.jpg"
-                alt="Façade de l'hôpital « La Croix » de Zinvié"
-                className="h-44 w-full object-cover"
-                loading="lazy"
-              />
+              <div className="relative h-44 bg-sand-100">
+                <Image
+                  src="/images/hero-hopital.jpg"
+                  alt="Façade de l'hôpital « La Croix » de Zinvié"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  className="object-cover"
+                />
+              </div>
               <iframe
                 title="Plan d'accès à l'Hôpital La Croix de Zinvié"
                 src={settings.mapEmbed}

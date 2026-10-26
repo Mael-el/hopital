@@ -47,6 +47,18 @@ export async function generateMetadata(): Promise<Metadata> {
       description: settings.tagline,
       type: "website",
       locale: "fr_BJ",
+      images: [
+        {
+          url: "/images/hero-hopital.jpg",
+          alt: "Le bâtiment de l'hôpital « La Croix » de Zinvié",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: settings.hospitalName,
+      description: settings.tagline,
+      images: ["/images/hero-hopital.jpg"],
     },
   };
 }

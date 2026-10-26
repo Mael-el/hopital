@@ -212,7 +212,7 @@ export default async function AdminAboutContentPage() {
 
       {/* Valeurs */}
       <section className="rounded-[3px] border border-slate-200 bg-white p-6">
-        <h2 className="font-bold text-slate-800">Valeurs de l'hôpital</h2>
+        <h2 className="font-bold text-slate-800">Valeurs de l&rsquo;hôpital</h2>
         <div className="mt-5 space-y-3">
           {values.map((value) => (
             <div key={value.id} className="rounded-[3px] border border-slate-200 p-4">

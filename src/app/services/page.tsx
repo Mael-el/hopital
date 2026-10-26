@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 import { PageHero } from "@/components/breadcrumb";
@@ -30,12 +31,15 @@ export default async function ServicesPage() {
       {/* Bandeau photographique */}
       <section className="border-b border-sand-200">
         <div className="container-page grid items-stretch gap-0 lg:grid-cols-[1.4fr_1fr]">
-          <img
-            src="/images/hero-hopital.jpg"
-            alt="Le bâtiment de l'hôpital « La Croix » de Zinvié"
-            className="h-56 w-full object-cover sm:h-72 lg:h-full"
-            loading="lazy"
-          />
+          <div className="relative min-h-56 bg-sand-100 sm:min-h-72">
+            <Image
+              src="/images/hero-hopital.jpg"
+              alt="Le bâtiment de l'hôpital « La Croix » de Zinvié"
+              fill
+              sizes="(max-width: 1024px) 100vw, 58vw"
+              className="object-cover"
+            />
+          </div>
           <dl className="grid grid-cols-2 bg-sand-100 lg:grid-cols-2">
             {[
               { label: "Capacité", value: "100 lits" },

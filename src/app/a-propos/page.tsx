@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 import { PageHero } from "@/components/breadcrumb";
@@ -63,12 +64,15 @@ export default async function AboutPage() {
           </div>
 
           <figure className="border border-sand-200 bg-white p-2">
-            <img
-              src="/images/hero-hopital.jpg"
-              alt="Le bâtiment de l'hôpital « La Croix » de Zinvié"
-              className="h-72 w-full object-cover sm:h-80"
-              loading="lazy"
-            />
+            <div className="relative h-72 bg-sand-100 sm:h-80">
+              <Image
+                src="/images/hero-hopital.jpg"
+                alt="Le bâtiment de l'hôpital « La Croix » de Zinvié"
+                fill
+                sizes="(max-width: 1024px) 100vw, 45vw"
+                className="object-cover"
+              />
+            </div>
             <figcaption className="flex items-start gap-3 px-3 py-4">
               <Icon name="hospital" className="mt-0.5 h-4 w-4 shrink-0 text-brand-700" />
               <span className="text-xs leading-relaxed text-slate-500">
@@ -82,12 +86,13 @@ export default async function AboutPage() {
           </figure>
         </div>
 
-        <div className="mx-auto mt-14 max-w-5xl overflow-hidden rounded-[4px]">
-          <img
+        <div className="relative mx-auto mt-14 h-72 max-w-5xl overflow-hidden rounded-[4px] bg-sand-100 sm:h-96">
+          <Image
             src="/images/equipe-soins.jpg"
             alt="L'équipe soignante de l'hôpital La Croix de Zinvié"
-            className="h-72 w-full object-cover sm:h-96"
-            loading="lazy"
+            fill
+            sizes="(max-width: 1024px) 100vw, 64rem"
+            className="object-cover"
           />
         </div>
 

@@ -86,7 +86,7 @@ export default async function AdminDoctorsPage({ searchParams }: Props) {
             />
             <div>
               <label htmlFor="serviceId" className="field-label">
-                Service d'affectation
+                Service d&rsquo;affectation
               </label>
               <select
                 id="serviceId"

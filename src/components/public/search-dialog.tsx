@@ -73,16 +73,16 @@ export function SearchDialog() {
     };
   }, [open]);
 
-  /* Recherche différée côté serveur */
+  /* Résultats affichés : rien tant que la saisie est trop courte */
+  const visibleResults = query.trim().length < 2 ? [] : results;
+
+  /* Recherche différée côté serveur (états mis à jour de façon asynchrone) */
   useEffect(() => {
     if (!open) return;
     const term = query.trim();
-    if (term.length < 2) {
-      setResults([]);
-      return;
-    }
-    setLoading(true);
+    if (term.length < 2) return;
     const timer = window.setTimeout(async () => {
+      setLoading(true);
       try {
         const response = await fetch(`/api/recherche?q=${encodeURIComponent(term)}`, {
           cache: "no-store",
@@ -111,16 +111,17 @@ export function SearchDialog() {
   function onKeyDown(event: React.KeyboardEvent<HTMLInputElement>) {
     if (event.key === "ArrowDown") {
       event.preventDefault();
-      setActive((index) => (index + 1) % Math.max(results.length, 1));
+      setActive((index) => (index + 1) % Math.max(visibleResults.length, 1));
     } else if (event.key === "ArrowUp") {
       event.preventDefault();
       setActive(
         (index) =>
-          (index - 1 + Math.max(results.length, 1)) % Math.max(results.length, 1),
+          (index - 1 + Math.max(visibleResults.length, 1)) %
+          Math.max(visibleResults.length, 1),
       );
-    } else if (event.key === "Enter" && results[active]) {
+    } else if (event.key === "Enter" && visibleResults[active]) {
       event.preventDefault();
-      go(results[active].href);
+      go(visibleResults[active].href);
     }
   }
 
@@ -193,7 +194,7 @@ export function SearchDialog() {
                 <p className="p-6 text-center text-sm text-slate-500">
                   Recherche en cours…
                 </p>
-              ) : results.length === 0 ? (
+              ) : visibleResults.length === 0 ? (
                 <div className="p-6 text-center">
                   <p className="font-medium text-slate-700">
                     Aucun résultat pour « {query} »
@@ -204,7 +205,7 @@ export function SearchDialog() {
                 </div>
               ) : (
                 <ul className="divide-y divide-sand-100">
-                  {results.map((result, index) => (
+                  {visibleResults.map((result, index) => (
                     <li key={`${result.type}-${result.title}-${index}`}>
                       <Link
                         href={result.href}

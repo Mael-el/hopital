@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { Icon, type IconName } from "@/components/icons";
@@ -89,11 +90,14 @@ export default async function HomePage() {
           </div>
 
           {/* Colonne image : la photo de l'hôpital */}
-          <div className="relative border-sand-200 lg:border-l">
-            <img
+          <div className="relative h-64 border-sand-200 bg-sand-100 sm:h-96 lg:h-auto lg:min-h-[34rem] lg:border-l">
+            <Image
               src="/images/hero-hopital.jpg"
               alt="Le bâtiment de l'hôpital « La Croix » de Zinvié"
-              className="h-64 w-full object-cover sm:h-96 lg:h-full lg:min-h-[34rem]"
+              fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
             />
             <div className="absolute inset-x-0 bottom-0 bg-brand-950/90 px-6 py-5 backdrop-blur-[2px]">
               <p className="font-serif text-lg font-semibold text-white">
@@ -277,11 +281,12 @@ export default async function HomePage() {
 
       {/* ====================== IMAGE + CITATION ====================== */}
       <section className="relative isolate overflow-hidden">
-        <img
+        <Image
           src="/images/equipe-soins.jpg"
           alt="L'équipe soignante de l'hôpital La Croix de Zinvié"
-          className="absolute inset-0 -z-10 h-full w-full object-cover"
-          loading="lazy"
+          fill
+          sizes="100vw"
+          className="-z-10 object-cover"
         />
         <div className="absolute inset-0 -z-10 bg-brand-950/85" />
         <div className="container-page py-20 lg:py-28">

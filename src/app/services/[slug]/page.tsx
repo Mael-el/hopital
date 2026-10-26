@@ -56,7 +56,7 @@ export default async function ServiceDetailPage({ params }: Props) {
             className="btn btn-outline border-white/40 text-white hover:bg-white hover:text-brand-900"
           >
             <Icon name="phone" className="h-4 w-4" />
-            Appeler l'hôpital
+            Appeler l&rsquo;hôpital
           </a>
         </div>
       </PageHero>
