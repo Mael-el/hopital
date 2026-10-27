@@ -41,7 +41,7 @@ export default async function AdminRequestsPage() {
           {requests.map((request) => (
             <article
               key={request.id}
-              className="rounded-[3px] border border-slate-200 bg-white p-5"
+              className="rounded-lg border border-slate-200 bg-white p-5"
             >
               <div className="flex flex-wrap items-start justify-between gap-4">
                 <div>
@@ -94,7 +94,7 @@ export default async function AdminRequestsPage() {
 
               <form
                 action={setRequestStatus}
-                className="mt-4 grid gap-3 rounded-[3px] bg-slate-50 p-4 sm:grid-cols-[180px_1fr_auto] sm:items-end"
+                className="mt-4 grid gap-3 rounded-lg bg-slate-50 p-4 sm:grid-cols-[180px_1fr_auto] sm:items-end"
               >
                 <input type="hidden" name="id" value={request.id} />
                 <div>

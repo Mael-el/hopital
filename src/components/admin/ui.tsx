@@ -39,12 +39,12 @@ export function StatCard({
   href?: string;
 }) {
   const content = (
-    <div className="rounded-[3px] border border-slate-200 bg-white p-5 transition hover:border-brand-300 ">
+    <div className="rounded-lg border border-slate-200 bg-white p-5 transition hover:border-brand-300 ">
       <div className="flex items-start justify-between">
         <p className="text-xs font-bold uppercase tracking-wider text-slate-500">
           {label}
         </p>
-        <span className="flex h-9 w-9 items-center justify-center rounded-[3px] bg-brand-50 text-brand-700">
+        <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-care-50 text-care-700">
           <Icon name={icon} className="h-4.5 w-4.5" />
         </span>
       </div>
@@ -94,7 +94,7 @@ export function EmptyState({
   icon?: IconName;
 }) {
   return (
-    <div className="rounded-[3px] border border-dashed border-slate-300 bg-slate-50 p-10 text-center">
+    <div className="rounded-lg border border-dashed border-slate-300 bg-slate-50 p-10 text-center">
       <Icon name={icon} className="mx-auto h-8 w-8 text-slate-300" />
       <p className="mt-3 font-semibold text-slate-700">{title}</p>
       {text && <p className="mt-1 text-sm text-slate-500">{text}</p>}

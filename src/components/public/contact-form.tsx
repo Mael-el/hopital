@@ -55,7 +55,7 @@ export function ContactForm() {
 
   if (success) {
     return (
-      <div className="rounded-[4px] border border-brand-200 bg-brand-50 p-8 text-center">
+      <div className="rounded-xl border border-brand-200 bg-brand-50 p-8 text-center">
         <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-brand-700 text-white">
           <Icon name="check" className="h-7 w-7" strokeWidth={2.4} />
         </span>
@@ -77,7 +77,7 @@ export function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-5" noValidate>
       {globalError && (
-        <p className="rounded-[3px] bg-cross-50 px-4 py-3 text-sm font-medium text-cross-700">
+        <p className="rounded-lg bg-cross-50 px-4 py-3 text-sm font-medium text-cross-700">
           {globalError}
         </p>
       )}

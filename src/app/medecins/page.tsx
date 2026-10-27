@@ -185,7 +185,7 @@ export default async function DoctorsPage({ searchParams }: Props) {
                 return (
                   <article key={doctor.id} className="card p-5">
                     <div className="flex items-center gap-3">
-                      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[3px] bg-brand-50 text-brand-700">
+                      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-care-50 text-care-700">
                         <Icon name="users" className="h-5 w-5" />
                       </span>
                       <div>
@@ -244,7 +244,7 @@ export default async function DoctorsPage({ searchParams }: Props) {
       </section>
 
       <section className="bg-white py-14">
-        <div className="container-page flex flex-col items-center justify-between gap-6 rounded-[4px] bg-brand-50 px-8 py-9 sm:flex-row">
+        <div className="container-page flex flex-col items-center justify-between gap-6 rounded-xl bg-brand-50 px-8 py-9 sm:flex-row">
           <div>
             <h2 className="text-lg font-bold text-brand-900">
               Besoin d&apos;un rendez-vous ?

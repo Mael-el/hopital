@@ -46,7 +46,7 @@ export default async function AdminFaqPage({ searchParams }: Props) {
       {showForm && (
         <form
           action={saveFaq}
-          className="mb-8 rounded-[3px] border border-brand-200 bg-white p-6"
+          className="mb-8 rounded-lg border border-brand-200 bg-white p-6"
         >
           {editing && <input type="hidden" name="id" value={editing.id} />}
           <h2 className="font-bold text-slate-800">
@@ -111,7 +111,7 @@ export default async function AdminFaqPage({ searchParams }: Props) {
       ) : (
         <div className="space-y-3">
           {all.map((faq) => (
-            <div key={faq.id} className="rounded-[3px] border border-slate-200 bg-white p-5">
+            <div key={faq.id} className="rounded-lg border border-slate-200 bg-white p-5">
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <div className="min-w-0">
                   <p className="font-semibold text-slate-800">{faq.question}</p>
@@ -122,7 +122,7 @@ export default async function AdminFaqPage({ searchParams }: Props) {
                   <StatusBadge status={faq.published ? "published" : "unpublished"} />
                   <Link
                     href={`/admin/faq?modifier=${faq.id}`}
-                    className="rounded-[3px] border border-slate-200 px-3 py-1.5 text-xs font-semibold text-slate-700 hover:border-brand-400 hover:text-brand-700"
+                    className="rounded-lg border border-slate-200 px-3 py-1.5 text-xs font-semibold text-slate-700 hover:border-brand-400 hover:text-brand-700"
                   >
                     Modifier
                   </Link>
@@ -130,7 +130,7 @@ export default async function AdminFaqPage({ searchParams }: Props) {
                     <input type="hidden" name="id" value={faq.id} />
                     <button
                       type="submit"
-                      className="rounded-[3px] border border-cross-200 px-3 py-1.5 text-xs font-semibold text-cross-700 hover:bg-cross-50"
+                      className="rounded-lg border border-cross-200 px-3 py-1.5 text-xs font-semibold text-cross-700 hover:bg-cross-50"
                     >
                       Supprimer
                     </button>

@@ -18,9 +18,9 @@ export default async function LoginPage({ searchParams }: Props) {
 
   return (
     <div className="w-full max-w-md">
-      <div className="rounded-[4px] border border-slate-200 bg-white p-8 ">
+      <div className="rounded-xl border border-slate-200 bg-white p-8 ">
         <div className="flex items-center gap-3">
-          <span className="flex h-12 w-12 items-center justify-center rounded-[3px] bg-brand-700 text-white">
+          <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-700 text-white">
             <Icon name="cross" className="h-6 w-6" strokeWidth={2} />
           </span>
           <div>
@@ -40,7 +40,7 @@ export default async function LoginPage({ searchParams }: Props) {
         </p>
 
         {erreur && (
-          <p className="mt-5 rounded-[3px] bg-cross-50 px-4 py-3 text-sm font-medium text-cross-700">
+          <p className="mt-5 rounded-lg bg-cross-50 px-4 py-3 text-sm font-medium text-cross-700">
             Identifiants incorrects. Merci de réessayer.
           </p>
         )}

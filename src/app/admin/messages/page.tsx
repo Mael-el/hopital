@@ -36,7 +36,7 @@ export default async function AdminMessagesPage() {
           {messages.map((message) => (
             <article
               key={message.id}
-              className="rounded-[3px] border border-slate-200 bg-white p-5"
+              className="rounded-lg border border-slate-200 bg-white p-5"
             >
               <div className="flex flex-wrap items-start justify-between gap-4">
                 <div>
@@ -79,7 +79,7 @@ export default async function AdminMessagesPage() {
                 </a>
               </div>
 
-              <p className="mt-4 whitespace-pre-line rounded-[3px] bg-sand-100 p-4 text-sm leading-relaxed text-slate-700">
+              <p className="mt-4 whitespace-pre-line rounded-lg bg-sand-100 p-4 text-sm leading-relaxed text-slate-700">
                 {message.message}
               </p>
 

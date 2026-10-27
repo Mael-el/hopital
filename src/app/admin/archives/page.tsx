@@ -69,7 +69,7 @@ export default async function AdminArchivesPage() {
           {items.map((item) => (
             <details
               key={item.id}
-              className="rounded-[3px] border border-slate-200 bg-white p-5"
+              className="rounded-lg border border-slate-200 bg-white p-5"
             >
               <summary className="flex cursor-pointer list-none flex-wrap items-center justify-between gap-3">
                 <div>
@@ -86,7 +86,7 @@ export default async function AdminArchivesPage() {
                   Lecture seule
                 </span>
               </summary>
-              <pre className="mt-4 overflow-x-auto rounded-[3px] bg-slate-900 p-4 text-xs leading-relaxed text-slate-100">
+              <pre className="mt-4 overflow-x-auto rounded-lg bg-slate-900 p-4 text-xs leading-relaxed text-slate-100">
                 {JSON.stringify(item.payload, null, 2)}
               </pre>
             </details>

@@ -26,7 +26,7 @@ export async function SiteFooter() {
         {/* Identité */}
         <div className="lg:border-r lg:border-white/10 lg:pr-8">
           <div className="flex items-center gap-3">
-            <span className="flex h-12 w-12 items-center justify-center rounded-[3px] bg-white text-brand-800">
+            <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-white text-brand-800">
               <Icon name="cross" className="h-6 w-6" strokeWidth={2} />
             </span>
             <span className="leading-tight">
@@ -56,7 +56,7 @@ export async function SiteFooter() {
                 rel="noreferrer"
                 aria-label={link.label}
                 title={link.label}
-                className="flex h-9 w-9 items-center justify-center rounded-[3px] border border-white/20 text-white/80 transition hover:border-cross-500 hover:bg-cross-600 hover:text-white"
+                className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/20 text-white/80 transition hover:border-cross-500 hover:bg-cross-600 hover:text-white"
               >
                 <Icon
                   name={(link.platform as IconName) ?? "globe"}

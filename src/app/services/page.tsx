@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 import { PageHero } from "@/components/breadcrumb";
@@ -30,12 +31,15 @@ export default async function ServicesPage() {
       {/* Bandeau photographique */}
       <section className="border-b border-sand-200">
         <div className="container-page grid items-stretch gap-0 lg:grid-cols-[1.4fr_1fr]">
-          <img
-            src="/images/hero-hopital.jpg"
-            alt="Le bâtiment de l'hôpital « La Croix » de Zinvié"
-            className="h-56 w-full object-cover sm:h-72 lg:h-full"
-            loading="lazy"
-          />
+          <div className="relative min-h-56 bg-sand-100 sm:min-h-72">
+            <Image
+              src="/images/hero-hopital.jpg"
+              alt="Le bâtiment de l'hôpital « La Croix » de Zinvié"
+              fill
+              sizes="(max-width: 1024px) 100vw, 58vw"
+              className="object-cover"
+            />
+          </div>
           <dl className="grid grid-cols-2 bg-sand-100 lg:grid-cols-2">
             {[
               { label: "Capacité", value: "100 lits" },
@@ -94,9 +98,9 @@ export default async function ServicesPage() {
                 <Link
                   key={service.id}
                   href={`/services/${service.slug}`}
-                  className="group flex items-start gap-4 rounded-[4px] border border-slate-200 bg-white p-5 transition-colors hover:border-brand-300 "
+                  className="group flex items-start gap-4 rounded-xl border border-slate-200 bg-white p-5 transition-colors hover:border-brand-300 "
                 >
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[3px] bg-brand-50 text-brand-700 transition group-hover:bg-brand-700 group-hover:text-white">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-care-50 text-care-700 transition group-hover:bg-brand-700 group-hover:text-white">
                     <Icon
                       name={(service.icon as IconName) ?? "stethoscope"}
                       className="h-5 w-5"
@@ -122,7 +126,7 @@ export default async function ServicesPage() {
       )}
 
       <section className="container-page py-14">
-        <div className="flex flex-col items-center justify-between gap-6 rounded-[4px] bg-brand-900 px-8 py-10 text-center text-white sm:flex-row sm:text-left">
+        <div className="flex flex-col items-center justify-between gap-6 rounded-xl bg-brand-900 px-8 py-10 text-center text-white sm:flex-row sm:text-left">
           <div>
             <h2 className="text-xl font-bold sm:text-2xl">
               Besoin d&apos;une consultation ?
@@ -161,7 +165,7 @@ function ServiceCard({
       className="card group flex flex-col p-6 transition-colors hover:border-brand-300 "
     >
       <div className="flex items-start justify-between gap-3">
-        <span className="flex h-12 w-12 items-center justify-center rounded-[3px] bg-brand-50 text-brand-700 transition group-hover:bg-brand-700 group-hover:text-white">
+        <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-care-50 text-care-700 transition group-hover:bg-brand-700 group-hover:text-white">
           <Icon name={(service.icon as IconName) ?? "stethoscope"} className="h-6 w-6" />
         </span>
         {service.appointment && (

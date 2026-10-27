@@ -81,7 +81,7 @@ export function ProgressBar({
         aria-valuemax={100}
       >
         <div
-          className="h-full rounded-full bg-brand-600 transition-[width] duration-700 ease-out"
+          className="h-full rounded-full bg-gradient-to-r from-care-500 to-brand-600 transition-[width] duration-700 ease-out"
           style={{ width: `${percentage}%` }}
         />
       </div>

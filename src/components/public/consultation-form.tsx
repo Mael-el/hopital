@@ -74,7 +74,7 @@ export function ConsultationForm({
 
   if (success) {
     return (
-      <div className="rounded-[4px] border border-brand-200 bg-brand-50 p-8 text-center">
+      <div className="rounded-xl border border-brand-200 bg-brand-50 p-8 text-center">
         <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-brand-700 text-white">
           <Icon name="check" className="h-7 w-7" strokeWidth={2.4} />
         </span>
@@ -85,7 +85,7 @@ export function ConsultationForm({
           {success.message}
         </p>
         {success.reference && (
-          <p className="mt-4 inline-block rounded-[3px] bg-white px-4 py-2 text-sm font-semibold text-brand-800">
+          <p className="mt-4 inline-block rounded-lg bg-white px-4 py-2 text-sm font-semibold text-brand-800">
             Référence : {success.reference}
           </p>
         )}
@@ -107,13 +107,13 @@ export function ConsultationForm({
   return (
     <form onSubmit={handleSubmit} className="space-y-5" noValidate>
       {globalError && (
-        <p className="rounded-[3px] bg-cross-50 px-4 py-3 text-sm font-medium text-cross-700">
+        <p className="rounded-lg bg-cross-50 px-4 py-3 text-sm font-medium text-cross-700">
           {globalError}
         </p>
       )}
 
       {defaultMotif && (
-        <p className="flex items-start gap-2 rounded-[3px] border border-brand-200 bg-brand-50 px-4 py-3 text-sm text-brand-800">
+        <p className="flex items-start gap-2 rounded-lg border border-brand-200 bg-brand-50 px-4 py-3 text-sm text-brand-800">
           <Icon name="sparkles" className="mt-0.5 h-4 w-4 shrink-0" />
           <span>
             Votre demande a été pré-remplie à partir de l&apos;assistant
@@ -227,7 +227,7 @@ export function ConsultationForm({
         )}
       </div>
 
-      <div className="flex flex-col gap-4 rounded-[3px] bg-sand-100 p-4 sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex flex-col gap-4 rounded-lg bg-sand-100 p-4 sm:flex-row sm:items-center sm:justify-between">
         <p className="flex items-start gap-2 text-xs leading-relaxed text-slate-600">
           <Icon name="shield" className="mt-0.5 h-4 w-4 shrink-0 text-brand-600" />
           Cette demande n&apos;est pas un rendez-vous confirmé : l&apos;hôpital vous

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { Icon, type IconName } from "@/components/icons";
@@ -35,7 +36,7 @@ export default async function HomePage() {
   return (
     <>
       {/* ============================ HERO ============================ */}
-      <section className="border-b border-sand-200">
+      <section className="border-b border-sand-200 bg-gradient-to-b from-brand-50 via-white to-white">
         <div className="container-page grid items-stretch gap-0 lg:grid-cols-[1.02fr_1fr]">
           {/* Colonne texte */}
           <div className="flex flex-col justify-center py-12 lg:py-20 lg:pr-14">
@@ -89,11 +90,14 @@ export default async function HomePage() {
           </div>
 
           {/* Colonne image : la photo de l'hôpital */}
-          <div className="relative border-sand-200 lg:border-l">
-            <img
+          <div className="relative h-64 border-sand-200 bg-sand-100 sm:h-96 lg:h-auto lg:min-h-[34rem] lg:border-l">
+            <Image
               src="/images/hero-hopital.jpg"
               alt="Le bâtiment de l'hôpital « La Croix » de Zinvié"
-              className="h-64 w-full object-cover sm:h-96 lg:h-full lg:min-h-[34rem]"
+              fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
             />
             <div className="absolute inset-x-0 bottom-0 bg-brand-950/90 px-6 py-5 backdrop-blur-[2px]">
               <p className="font-serif text-lg font-semibold text-white">
@@ -158,7 +162,7 @@ export default async function HomePage() {
               href={item.href}
               className="group flex items-start gap-4 bg-white p-7 transition hover:bg-brand-50/70"
             >
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[3px] bg-brand-50 text-brand-700">
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-care-50 text-care-700">
                 <Icon name={item.icon} className="h-5 w-5" />
               </span>
               <span>
@@ -206,7 +210,7 @@ export default async function HomePage() {
                 key={pillar.title}
                 className="flex gap-5 border-b border-sand-200 py-6 first:pt-0 lg:first:pt-0"
               >
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[3px] bg-brand-50 text-brand-700">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-care-50 text-care-700">
                   <Icon
                     name={(pillar.icon as IconName) ?? "heart"}
                     className="h-5 w-5"
@@ -277,11 +281,12 @@ export default async function HomePage() {
 
       {/* ====================== IMAGE + CITATION ====================== */}
       <section className="relative isolate overflow-hidden">
-        <img
+        <Image
           src="/images/equipe-soins.jpg"
           alt="L'équipe soignante de l'hôpital La Croix de Zinvié"
-          className="absolute inset-0 -z-10 h-full w-full object-cover"
-          loading="lazy"
+          fill
+          sizes="100vw"
+          className="-z-10 object-cover"
         />
         <div className="absolute inset-0 -z-10 bg-brand-950/85" />
         <div className="container-page py-20 lg:py-28">
@@ -349,7 +354,7 @@ export default async function HomePage() {
       </section>
 
       {/* ============================== DON ============================ */}
-      <section className="border-t-4 border-cross-600 bg-brand-950 py-16 text-white lg:py-20">
+      <section className="border-t-4 border-cross-600 bg-gradient-to-br from-brand-950 via-brand-900 to-care-950 py-16 text-white lg:py-20">
         <div className="container-page grid gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
             <p className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-cross-300">

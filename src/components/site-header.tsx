@@ -33,9 +33,12 @@ export function SiteHeader({
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
-  useEffect(() => {
+  /* Ferme le menu mobile à chaque changement de page (ajustement au rendu) */
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname);
     setOpen(false);
-  }, [pathname]);
+  }
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -48,7 +51,7 @@ export function SiteHeader({
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-sand-300 bg-white">
+    <header className="sticky top-0 z-50 border-b border-sand-300 bg-white shadow-[0_1px_8px_rgba(9,42,64,0.06)]">
       {/* Bandeau utilitaire */}
       <div className="hidden bg-brand-950 text-brand-100/85 lg:block">
         <div className="container-page flex h-10 items-center justify-between text-[0.72rem] tracking-wide">
@@ -89,10 +92,13 @@ export function SiteHeader({
               <Icon name="phone" className="h-3.5 w-3.5 text-brand-300" />
               {phone}
             </a>
-            <span className="flex items-center gap-1.5 text-cross-300">
+            <a
+              href={`tel:${emergencyPhone.replace(/\s/g, "")}`}
+              className="flex items-center gap-1.5 font-semibold text-cross-300 transition hover:text-cross-200"
+            >
               <Icon name="ambulance" className="h-3.5 w-3.5" />
               Urgences 24h/24 — {emergencyPhone}
-            </span>
+            </a>
           </div>
         </div>
       </div>
@@ -143,7 +149,7 @@ export function SiteHeader({
             onClick={() => setOpen((v) => !v)}
             aria-label="Ouvrir le menu"
             aria-expanded={open}
-            className="flex h-10 w-10 items-center justify-center rounded-[3px] border border-sand-300 text-brand-800 lg:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-lg border border-sand-300 text-brand-800 lg:hidden"
           >
             <Icon name={open ? "close" : "menu"} className="h-5 w-5" />
           </button>

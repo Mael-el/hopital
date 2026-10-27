@@ -43,7 +43,7 @@ export function PageHero({
   children?: React.ReactNode;
 }) {
   return (
-    <section className="border-t-4 border-cross-600 bg-brand-950 text-white">
+    <section className="border-t-4 border-cross-600 bg-gradient-to-br from-brand-950 via-brand-900 to-brand-800 text-white">
       <div className="container-page py-12 sm:py-16">
         {breadcrumb && (
           <div className="mb-7">

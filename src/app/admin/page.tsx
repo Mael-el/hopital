@@ -137,7 +137,7 @@ export default async function AdminDashboard() {
       </div>
 
       <div className="mt-8 grid gap-6 lg:grid-cols-2">
-        <section className="rounded-[3px] border border-slate-200 bg-white">
+        <section className="rounded-lg border border-slate-200 bg-white">
           <div className="flex items-center justify-between border-b border-slate-200 px-5 py-4">
             <h2 className="font-bold text-slate-800">Dernières demandes</h2>
             <Link
@@ -175,7 +175,7 @@ export default async function AdminDashboard() {
           )}
         </section>
 
-        <section className="rounded-[3px] border border-slate-200 bg-white">
+        <section className="rounded-lg border border-slate-200 bg-white">
           <div className="flex items-center justify-between border-b border-slate-200 px-5 py-4">
             <h2 className="font-bold text-slate-800">Derniers dons</h2>
             <Link
@@ -214,7 +214,7 @@ export default async function AdminDashboard() {
         </section>
       </div>
 
-      <section className="mt-6 rounded-[3px] border border-slate-200 bg-white p-5">
+      <section className="mt-6 rounded-lg border border-slate-200 bg-white p-5">
         <h2 className="font-bold text-slate-800">Raccourcis</h2>
         <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {[
@@ -230,7 +230,7 @@ export default async function AdminDashboard() {
             <Link
               key={item.href}
               href={item.href}
-              className="flex items-center gap-3 rounded-[3px] border border-slate-200 px-4 py-3 text-sm font-medium text-slate-700 transition hover:border-brand-300 hover:bg-brand-50 hover:text-brand-800"
+              className="flex items-center gap-3 rounded-lg border border-slate-200 px-4 py-3 text-sm font-medium text-slate-700 transition hover:border-brand-300 hover:bg-brand-50 hover:text-brand-800"
             >
               <Icon name={item.icon} className="h-4 w-4 text-brand-600" />
               {item.label}

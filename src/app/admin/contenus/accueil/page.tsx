@@ -37,7 +37,7 @@ export default async function AdminHomeContentPage() {
       />
 
       <form action={updateHomePage} className="space-y-6">
-        <section className="rounded-[3px] border border-slate-200 bg-white p-6">
+        <section className="rounded-lg border border-slate-200 bg-white p-6">
           <h2 className="font-bold text-slate-800">Bandeau principal</h2>
           <div className="mt-4 grid gap-4">
             <Field
@@ -76,11 +76,11 @@ export default async function AdminHomeContentPage() {
           </div>
         </section>
 
-        <section className="rounded-[3px] border border-slate-200 bg-white p-6">
+        <section className="rounded-lg border border-slate-200 bg-white p-6">
           <h2 className="font-bold text-slate-800">Chiffres clés</h2>
           <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {stats.map((stat, index) => (
-              <div key={index} className="space-y-3 rounded-[3px] border border-slate-100 p-3">
+              <div key={index} className="space-y-3 rounded-lg border border-slate-100 p-3">
                 <Field
                   label={`Valeur ${index + 1}`}
                   name={`stat${index + 1}Value`}
@@ -96,11 +96,11 @@ export default async function AdminHomeContentPage() {
           </div>
         </section>
 
-        <section className="rounded-[3px] border border-slate-200 bg-white p-6">
+        <section className="rounded-lg border border-slate-200 bg-white p-6">
           <h2 className="font-bold text-slate-800">Points forts</h2>
           <div className="mt-4 space-y-4">
             {pillars.map((pillar, index) => (
-              <div key={index} className="space-y-3 rounded-[3px] border border-slate-100 p-3">
+              <div key={index} className="space-y-3 rounded-lg border border-slate-100 p-3">
                 <Field
                   label={`Titre ${index + 1}`}
                   name={`pillar${index + 1}Title`}

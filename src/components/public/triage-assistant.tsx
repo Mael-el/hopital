@@ -488,7 +488,7 @@ export function TriageAssistant() {
               )}
               <a href="tel:+22997214839" className="btn btn-ghost w-full">
                 <Icon name="phone" className="h-4 w-4" />
-                Appeler l'accueil
+                Appeler l&rsquo;accueil
               </a>
             </div>
 

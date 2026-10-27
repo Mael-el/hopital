@@ -25,7 +25,7 @@ export function AdminNav({ items }: { items: AdminNavItem[] }) {
           <Link
             key={item.href}
             href={item.href}
-            className={`flex items-center gap-3 rounded-[3px] px-3 py-2.5 text-sm font-medium transition ${
+            className={`flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition ${
               active
                 ? "bg-brand-700 text-white "
                 : "text-slate-600 hover:bg-slate-100 hover:text-brand-800"

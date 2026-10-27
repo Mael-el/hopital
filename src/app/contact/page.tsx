@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 import { PageHero } from "@/components/breadcrumb";
@@ -169,7 +170,7 @@ export default async function ContactPage() {
                     </div>
                     <a
                       href={`tel:${channel.value.replace(/\s/g, "")}`}
-                      className="shrink-0 rounded-[3px] bg-brand-50 px-3 py-1.5 text-sm font-bold text-brand-800 transition hover:bg-brand-700 hover:text-white"
+                      className="shrink-0 rounded-lg bg-brand-50 px-3 py-1.5 text-sm font-bold text-brand-800 transition hover:bg-brand-700 hover:text-white"
                     >
                       {channel.value}
                     </a>
@@ -212,7 +213,7 @@ export default async function ContactPage() {
                     href={link.url}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center gap-2 rounded-[3px] border border-sand-200 px-3 py-2 text-sm text-slate-700 transition hover:border-brand-600 hover:text-brand-800"
+                    className="flex items-center gap-2 rounded-lg border border-sand-200 px-3 py-2 text-sm text-slate-700 transition hover:border-brand-600 hover:text-brand-800"
                   >
                     <Icon name={(link.platform as never) ?? "globe"} className="h-4 w-4 text-brand-700" />
                     {link.label}
@@ -293,7 +294,7 @@ export default async function ContactPage() {
                     </div>
                     <a
                       href={`tel:${item.tel.replace(/\s/g, "")}`}
-                      className="shrink-0 rounded-[3px] bg-brand-50 px-3 py-1.5 text-sm font-bold text-brand-800 transition hover:bg-brand-700 hover:text-white"
+                      className="shrink-0 rounded-lg bg-brand-50 px-3 py-1.5 text-sm font-bold text-brand-800 transition hover:bg-brand-700 hover:text-white"
                     >
                       {item.number}
                     </a>
@@ -311,12 +312,15 @@ export default async function ContactPage() {
 
             {/* Plan d'accès */}
             <div className="card overflow-hidden">
-              <img
-                src="/images/hero-hopital.jpg"
-                alt="Façade de l'hôpital « La Croix » de Zinvié"
-                className="h-44 w-full object-cover"
-                loading="lazy"
-              />
+              <div className="relative h-44 bg-sand-100">
+                <Image
+                  src="/images/hero-hopital.jpg"
+                  alt="Façade de l'hôpital « La Croix » de Zinvié"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  className="object-cover"
+                />
+              </div>
               <iframe
                 title="Plan d'accès à l'Hôpital La Croix de Zinvié"
                 src={settings.mapEmbed}
