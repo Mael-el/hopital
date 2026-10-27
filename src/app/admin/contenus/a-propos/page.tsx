@@ -43,7 +43,7 @@ export default async function AdminAboutContentPage() {
       />
 
       <form action={updateAboutPage} className="space-y-6">
-        <section className="rounded-[3px] border border-slate-200 bg-white p-6">
+        <section className="rounded-lg border border-slate-200 bg-white p-6">
           <h2 className="font-bold text-slate-800">Page « À propos »</h2>
           <div className="mt-4 grid gap-4">
             <Field label="Titre" name="title" defaultValue={page.title} required />
@@ -64,7 +64,7 @@ export default async function AdminAboutContentPage() {
         </section>
 
         <section className="grid gap-6 lg:grid-cols-2">
-          <div className="rounded-[3px] border border-slate-200 bg-white p-6">
+          <div className="rounded-lg border border-slate-200 bg-white p-6">
             <h2 className="font-bold text-slate-800">Mission</h2>
             <div className="mt-4 grid gap-4">
               <Field
@@ -80,7 +80,7 @@ export default async function AdminAboutContentPage() {
               />
             </div>
           </div>
-          <div className="rounded-[3px] border border-slate-200 bg-white p-6">
+          <div className="rounded-lg border border-slate-200 bg-white p-6">
             <h2 className="font-bold text-slate-800">Vision</h2>
             <div className="mt-4 grid gap-4">
               <Field
@@ -98,11 +98,11 @@ export default async function AdminAboutContentPage() {
           </div>
         </section>
 
-        <section className="rounded-[3px] border border-slate-200 bg-white p-6">
+        <section className="rounded-lg border border-slate-200 bg-white p-6">
           <h2 className="font-bold text-slate-800">Direction</h2>
           <div className="mt-4 grid gap-4 lg:grid-cols-3">
             {directions.map((direction, index) => (
-              <div key={index} className="space-y-3 rounded-[3px] border border-slate-100 p-3">
+              <div key={index} className="space-y-3 rounded-lg border border-slate-100 p-3">
                 <Field
                   label={`Nom ${index + 1}`}
                   name={`direction${index + 1}Name`}
@@ -124,7 +124,7 @@ export default async function AdminAboutContentPage() {
           </div>
         </section>
 
-        <section className="rounded-[3px] border border-slate-200 bg-white p-6">
+        <section className="rounded-lg border border-slate-200 bg-white p-6">
           <h2 className="font-bold text-slate-800">Partenariats</h2>
           <div className="mt-4">
             <TextArea
@@ -140,7 +140,7 @@ export default async function AdminAboutContentPage() {
       </form>
 
       {/* Frise chronologique */}
-      <section className="rounded-[3px] border border-slate-200 bg-white p-6">
+      <section className="rounded-lg border border-slate-200 bg-white p-6">
         <h2 className="font-bold text-slate-800">Frise chronologique</h2>
         <p className="mt-1 text-sm text-slate-600">
           Les étapes de l&apos;histoire de l&apos;hôpital, de 1972 à aujourd&apos;hui.
@@ -150,7 +150,7 @@ export default async function AdminAboutContentPage() {
           {timeline.map((entry) => (
             <div
               key={entry.id}
-              className="rounded-[3px] border border-slate-200 p-4"
+              className="rounded-lg border border-slate-200 p-4"
             >
               <form action={saveTimelineEntry} className="grid gap-3">
                 <input type="hidden" name="id" value={entry.id} />
@@ -191,7 +191,7 @@ export default async function AdminAboutContentPage() {
 
         <form
           action={saveTimelineEntry}
-          className="mt-5 grid gap-3 rounded-[3px] bg-slate-50 p-4"
+          className="mt-5 grid gap-3 rounded-lg bg-slate-50 p-4"
         >
           <p className="text-sm font-semibold text-slate-700">
             Ajouter une étape
@@ -211,11 +211,11 @@ export default async function AdminAboutContentPage() {
       </section>
 
       {/* Valeurs */}
-      <section className="rounded-[3px] border border-slate-200 bg-white p-6">
+      <section className="rounded-lg border border-slate-200 bg-white p-6">
         <h2 className="font-bold text-slate-800">Valeurs de l&rsquo;hôpital</h2>
         <div className="mt-5 space-y-3">
           {values.map((value) => (
-            <div key={value.id} className="rounded-[3px] border border-slate-200 p-4">
+            <div key={value.id} className="rounded-lg border border-slate-200 p-4">
               <form action={saveHospitalValue} className="grid gap-3">
                 <input type="hidden" name="id" value={value.id} />
                 <div className="grid gap-3 sm:grid-cols-3">
@@ -253,7 +253,7 @@ export default async function AdminAboutContentPage() {
 
         <form
           action={saveHospitalValue}
-          className="mt-5 grid gap-3 rounded-[3px] bg-slate-50 p-4"
+          className="mt-5 grid gap-3 rounded-lg bg-slate-50 p-4"
         >
           <p className="text-sm font-semibold text-slate-700">Ajouter une valeur</p>
           <div className="grid gap-3 sm:grid-cols-3">

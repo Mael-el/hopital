@@ -51,7 +51,7 @@ export function SiteHeader({
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-sand-300 bg-white shadow-[0_1px_8px_rgba(17,36,42,0.06)]">
+    <header className="sticky top-0 z-50 border-b border-sand-300 bg-white shadow-[0_1px_8px_rgba(9,42,64,0.06)]">
       {/* Bandeau utilitaire */}
       <div className="hidden bg-brand-950 text-brand-100/85 lg:block">
         <div className="container-page flex h-10 items-center justify-between text-[0.72rem] tracking-wide">
@@ -149,7 +149,7 @@ export function SiteHeader({
             onClick={() => setOpen((v) => !v)}
             aria-label="Ouvrir le menu"
             aria-expanded={open}
-            className="flex h-10 w-10 items-center justify-center rounded-[3px] border border-sand-300 text-brand-800 lg:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-lg border border-sand-300 text-brand-800 lg:hidden"
           >
             <Icon name={open ? "close" : "menu"} className="h-5 w-5" />
           </button>

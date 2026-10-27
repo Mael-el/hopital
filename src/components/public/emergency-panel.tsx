@@ -59,7 +59,7 @@ export function EmergencyPanel({
     <section
       className={
         dark
-          ? "border-t-4 border-cross-600 bg-brand-950 py-14 text-white"
+          ? "border-t-4 border-cross-600 bg-gradient-to-br from-brand-950 to-brand-900 py-14 text-white"
           : "border border-sand-200 bg-white py-12"
       }
     >

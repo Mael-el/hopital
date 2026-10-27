@@ -81,7 +81,7 @@ export default async function ConsultationPage({
                   },
                 ].map((step) => (
                   <li key={step.title} className="flex gap-3">
-                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[3px] bg-brand-50 text-brand-700">
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-care-50 text-care-700">
                       <Icon name={step.icon} className="h-4 w-4" />
                     </span>
                     <div>
@@ -95,7 +95,7 @@ export default async function ConsultationPage({
               </ol>
             </div>
 
-            <div className="rounded-[4px] bg-brand-900 p-6 text-white">
+            <div className="rounded-xl bg-brand-900 p-6 text-white">
               <h2 className="font-bold">Urgence ?</h2>
               <p className="mt-2 text-sm leading-relaxed text-brand-100/85">
                 Les urgences adultes et pédiatriques sont assurées en

@@ -156,7 +156,7 @@ export default async function ServiceDetailPage({ params }: Props) {
               </Link>
             </div>
 
-            <div className="rounded-[4px] bg-brand-900 p-6 text-white">
+            <div className="rounded-xl bg-brand-900 p-6 text-white">
               <Icon name="heart" className="h-6 w-6 text-cross-300" />
               <h3 className="mt-3 font-bold">Une aumônerie à votre écoute</h3>
               <p className="mt-2 text-sm leading-relaxed text-brand-100/80">
@@ -177,9 +177,9 @@ export default async function ServiceDetailPage({ params }: Props) {
               <Link
                 key={other.id}
                 href={`/services/${other.slug}`}
-                className="group flex items-center gap-3 rounded-[3px] border border-slate-200 p-4 transition hover:border-brand-300 hover:bg-brand-50/50"
+                className="group flex items-center gap-3 rounded-lg border border-slate-200 p-4 transition hover:border-brand-300 hover:bg-brand-50/50"
               >
-                <span className="flex h-10 w-10 items-center justify-center rounded-[3px] bg-brand-50 text-brand-700">
+                <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-care-50 text-care-700">
                   <Icon
                     name={(other.icon as IconName) ?? "stethoscope"}
                     className="h-5 w-5"

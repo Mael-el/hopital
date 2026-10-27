@@ -66,7 +66,7 @@ export function DonationForm({
   return (
     <form onSubmit={handleSubmit} className="space-y-6" noValidate>
       {globalError && (
-        <p className="rounded-[3px] bg-cross-50 px-4 py-3 text-sm font-medium text-cross-700">
+        <p className="rounded-lg bg-cross-50 px-4 py-3 text-sm font-medium text-cross-700">
           {globalError}
         </p>
       )}
@@ -82,7 +82,7 @@ export function DonationForm({
                 setAmount(preset);
                 setCustom("");
               }}
-              className={`rounded-[3px] border px-3 py-2.5 text-sm font-semibold transition ${
+              className={`rounded-lg border px-3 py-2.5 text-sm font-semibold transition ${
                 !custom && amount === preset
                   ? "border-brand-600 bg-brand-600 text-white"
                   : "border-slate-300 bg-white text-slate-700 hover:border-brand-400"

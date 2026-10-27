@@ -54,7 +54,7 @@ export default async function AdminNewsPage({ searchParams }: Props) {
       {showForm && (
         <form
           action={saveNews}
-          className="mb-8 rounded-[3px] border border-brand-200 bg-white p-6"
+          className="mb-8 rounded-lg border border-brand-200 bg-white p-6"
         >
           {editing && <input type="hidden" name="id" value={editing.id} />}
           <h2 className="font-bold text-slate-800">
@@ -135,7 +135,7 @@ export default async function AdminNewsPage({ searchParams }: Props) {
           icon="sparkles"
         />
       ) : (
-        <div className="overflow-x-auto rounded-[3px] border border-slate-200 bg-white">
+        <div className="overflow-x-auto rounded-lg border border-slate-200 bg-white">
           <table className="w-full text-left text-sm">
             <thead className="bg-slate-50 text-xs uppercase tracking-wider text-slate-500">
               <tr>
@@ -166,7 +166,7 @@ export default async function AdminNewsPage({ searchParams }: Props) {
                     <div className="flex justify-end gap-2">
                       <Link
                         href={`/admin/actualites?modifier=${item.id}`}
-                        className="rounded-[3px] border border-slate-200 px-3 py-1.5 text-xs font-semibold text-slate-700 hover:border-brand-400 hover:text-brand-700"
+                        className="rounded-lg border border-slate-200 px-3 py-1.5 text-xs font-semibold text-slate-700 hover:border-brand-400 hover:text-brand-700"
                       >
                         Modifier
                       </Link>
@@ -174,7 +174,7 @@ export default async function AdminNewsPage({ searchParams }: Props) {
                         <a
                           href={`/actualites/${item.slug}`}
                           target="_blank"
-                          className="rounded-[3px] border border-slate-200 px-3 py-1.5 text-xs font-semibold text-slate-700 hover:border-brand-400 hover:text-brand-700"
+                          className="rounded-lg border border-slate-200 px-3 py-1.5 text-xs font-semibold text-slate-700 hover:border-brand-400 hover:text-brand-700"
                         >
                           Voir
                         </a>
@@ -183,7 +183,7 @@ export default async function AdminNewsPage({ searchParams }: Props) {
                         <input type="hidden" name="id" value={item.id} />
                         <button
                           type="submit"
-                          className="rounded-[3px] border border-cross-200 px-3 py-1.5 text-xs font-semibold text-cross-700 hover:bg-cross-50"
+                          className="rounded-lg border border-cross-200 px-3 py-1.5 text-xs font-semibold text-cross-700 hover:bg-cross-50"
                         >
                           Supprimer
                         </button>

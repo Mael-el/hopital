@@ -170,7 +170,7 @@ export default async function ContactPage() {
                     </div>
                     <a
                       href={`tel:${channel.value.replace(/\s/g, "")}`}
-                      className="shrink-0 rounded-[3px] bg-brand-50 px-3 py-1.5 text-sm font-bold text-brand-800 transition hover:bg-brand-700 hover:text-white"
+                      className="shrink-0 rounded-lg bg-brand-50 px-3 py-1.5 text-sm font-bold text-brand-800 transition hover:bg-brand-700 hover:text-white"
                     >
                       {channel.value}
                     </a>
@@ -213,7 +213,7 @@ export default async function ContactPage() {
                     href={link.url}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center gap-2 rounded-[3px] border border-sand-200 px-3 py-2 text-sm text-slate-700 transition hover:border-brand-600 hover:text-brand-800"
+                    className="flex items-center gap-2 rounded-lg border border-sand-200 px-3 py-2 text-sm text-slate-700 transition hover:border-brand-600 hover:text-brand-800"
                   >
                     <Icon name={(link.platform as never) ?? "globe"} className="h-4 w-4 text-brand-700" />
                     {link.label}
@@ -294,7 +294,7 @@ export default async function ContactPage() {
                     </div>
                     <a
                       href={`tel:${item.tel.replace(/\s/g, "")}`}
-                      className="shrink-0 rounded-[3px] bg-brand-50 px-3 py-1.5 text-sm font-bold text-brand-800 transition hover:bg-brand-700 hover:text-white"
+                      className="shrink-0 rounded-lg bg-brand-50 px-3 py-1.5 text-sm font-bold text-brand-800 transition hover:bg-brand-700 hover:text-white"
                     >
                       {item.number}
                     </a>

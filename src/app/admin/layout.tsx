@@ -62,7 +62,7 @@ export default async function AdminLayout({ children }: { children: ReactNode })
       <header className="sticky top-0 z-40 border-b border-slate-200 bg-white">
         <div className="flex h-16 items-center justify-between gap-4 px-4 sm:px-6">
           <Link href="/admin" className="flex items-center gap-3">
-            <span className="flex h-10 w-10 items-center justify-center rounded-[3px] bg-brand-700 text-white">
+            <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-700 text-white">
               <Icon name="cross" className="h-5 w-5" strokeWidth={2} />
             </span>
             <span className="hidden leading-tight sm:block">
@@ -101,10 +101,10 @@ export default async function AdminLayout({ children }: { children: ReactNode })
 
       <div className="mx-auto flex max-w-[100rem] flex-col gap-6 px-4 py-6 sm:px-6 lg:flex-row">
         <aside className="lg:w-64 lg:shrink-0">
-          <div className="rounded-[3px] border border-slate-200 bg-white p-3">
+          <div className="rounded-lg border border-slate-200 bg-white p-3">
             <AdminNav items={nav} />
           </div>
-          <p className="mt-4 rounded-[3px] bg-brand-50 p-4 text-xs leading-relaxed text-brand-800">
+          <p className="mt-4 rounded-lg bg-brand-50 p-4 text-xs leading-relaxed text-brand-800">
             <strong className="block">Archivage automatique</strong>
             Les demandes, dons et messages inactifs depuis plus de 30 jours sont
             automatiquement déplacés vers les archives.

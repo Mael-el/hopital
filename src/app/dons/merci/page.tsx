@@ -104,7 +104,7 @@ export default async function DonationThanksPage({ searchParams }: Props) {
           </div>
         )}
 
-        <div className="mt-8 rounded-[4px] bg-brand-50 p-6 text-left">
+        <div className="mt-8 rounded-xl bg-brand-50 p-6 text-left">
           <h2 className="font-bold text-brand-900">
             Un reçu vous sera délivré
           </h2>

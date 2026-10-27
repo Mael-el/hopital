@@ -35,7 +35,7 @@ export default async function FaqPage() {
           ))}
         </div>
 
-        <div className="mt-8 divide-y divide-slate-200 overflow-hidden rounded-[4px] border border-slate-200 bg-white">
+        <div className="mt-8 divide-y divide-slate-200 overflow-hidden rounded-xl border border-slate-200 bg-white">
           {faqs.map((faq) => (
             <details key={faq.id} className="group">
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-5 text-left font-semibold text-brand-900 transition hover:bg-sand-50">

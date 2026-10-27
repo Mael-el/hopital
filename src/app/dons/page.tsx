@@ -63,7 +63,7 @@ export default async function DonationsPage() {
               key={need.id}
               className="card flex flex-col p-6 transition-shadow "
             >
-              <span className="flex h-12 w-12 items-center justify-center rounded-[3px] bg-brand-50 text-brand-700">
+              <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-care-50 text-care-700">
                 <Icon name={(need.icon as IconName) ?? "cross"} className="h-6 w-6" />
               </span>
               <h3 className="mt-4 text-lg font-bold text-brand-900">
@@ -94,19 +94,19 @@ export default async function DonationsPage() {
         </div>
 
         <div className="mt-8 grid gap-4 sm:grid-cols-3">
-          <div className="rounded-[4px] bg-brand-900 p-6 text-center text-white">
+          <div className="rounded-xl bg-brand-900 p-6 text-center text-white">
             <p className="font-serif text-3xl font-bold">
               <AnimatedCounter value={raised} /> FCFA
             </p>
             <p className="mt-1 text-sm text-brand-100/80">Collectés</p>
           </div>
-          <div className="rounded-[4px] bg-brand-800 p-6 text-center text-white">
+          <div className="rounded-xl bg-brand-800 p-6 text-center text-white">
             <p className="font-serif text-3xl font-bold">
               <AnimatedCounter value={donorCount} />
             </p>
             <p className="mt-1 text-sm text-brand-100/80">Dons enregistrés</p>
           </div>
-          <div className="rounded-[4px] bg-cross-600 p-6 text-center text-white">
+          <div className="rounded-xl bg-cross-600 p-6 text-center text-white">
             <p className="text-3xl font-bold">100%</p>
             <p className="mt-1 text-sm text-white/85">Réaffectés aux soins</p>
           </div>
@@ -130,7 +130,7 @@ export default async function DonationsPage() {
           </div>
 
           <aside className="space-y-5">
-            <div className="relative h-48 overflow-hidden rounded-[4px] bg-sand-100">
+            <div className="relative h-48 overflow-hidden rounded-xl bg-sand-100">
               <Image
                 src="/images/dons-solidarite.jpg"
                 alt="Accompagnement d'un patient par l'équipe soignante"
@@ -145,7 +145,7 @@ export default async function DonationsPage() {
               <div className="mt-4 space-y-4">
                 {settings.donationMethods.map((method) => (
                   <div key={method.name} className="flex gap-3">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[3px] bg-brand-50 text-brand-700">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-care-50 text-care-700">
                       <Icon name="hand-heart" className="h-5 w-5" />
                     </span>
                     <div>
@@ -157,7 +157,7 @@ export default async function DonationsPage() {
                   </div>
                 ))}
               </div>
-              <div className="mt-5 rounded-[3px] bg-sand-100 p-4">
+              <div className="mt-5 rounded-lg bg-sand-100 p-4">
                 <p className="text-xs leading-relaxed text-slate-600">
                   Le nom et l&apos;adresse e-mail sont facultatifs : ils nous
                   permettent uniquement de vous délivrer un reçu et de vous
@@ -166,7 +166,7 @@ export default async function DonationsPage() {
               </div>
             </div>
 
-            <div className="rounded-[4px] bg-brand-50 p-6">
+            <div className="rounded-xl bg-brand-50 p-6">
               <h2 className="font-bold text-brand-900">Autres façons d&apos;aider</h2>
               <ul className="mt-3 space-y-2 text-sm text-slate-600">
                 <li className="flex gap-2">

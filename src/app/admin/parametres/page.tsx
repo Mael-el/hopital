@@ -28,7 +28,7 @@ export default async function AdminSettingsPage() {
       />
 
       <form action={updateSettings} className="space-y-6">
-        <section className="rounded-[3px] border border-slate-200 bg-white p-6">
+        <section className="rounded-lg border border-slate-200 bg-white p-6">
           <h2 className="font-bold text-slate-800">Identité de l&rsquo;établissement</h2>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             <Field
@@ -63,7 +63,7 @@ export default async function AdminSettingsPage() {
           </div>
         </section>
 
-        <section className="rounded-[3px] border border-slate-200 bg-white p-6">
+        <section className="rounded-lg border border-slate-200 bg-white p-6">
           <h2 className="font-bold text-slate-800">Coordonnées</h2>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             <Field
@@ -121,7 +121,7 @@ export default async function AdminSettingsPage() {
           </div>
         </section>
 
-        <section className="rounded-[3px] border border-slate-200 bg-white p-6">
+        <section className="rounded-lg border border-slate-200 bg-white p-6">
           <h2 className="font-bold text-slate-800">
             Développeur & maintenance technique
           </h2>
@@ -162,7 +162,7 @@ export default async function AdminSettingsPage() {
           </div>
         </section>
 
-        <section className="rounded-[3px] border border-slate-200 bg-white p-6">
+        <section className="rounded-lg border border-slate-200 bg-white p-6">
           <h2 className="font-bold text-slate-800">Horaires</h2>
           <div className="mt-4 grid gap-4 sm:grid-cols-3">
             <Field
@@ -183,7 +183,7 @@ export default async function AdminSettingsPage() {
           </div>
         </section>
 
-        <section className="rounded-[3px] border border-slate-200 bg-white p-6">
+        <section className="rounded-lg border border-slate-200 bg-white p-6">
           <h2 className="font-bold text-slate-800">Moyens de don affichés</h2>
           <p className="mt-1 text-sm text-slate-600">
             Le paiement est assuré par FedaPay (MTN Mobile Money, Moov Money,
@@ -195,7 +195,7 @@ export default async function AdminSettingsPage() {
               return (
                 <div
                   key={index}
-                  className="grid gap-3 rounded-[3px] border border-slate-100 p-3 sm:grid-cols-2"
+                  className="grid gap-3 rounded-lg border border-slate-100 p-3 sm:grid-cols-2"
                 >
                   <Field
                     label={`Moyen ${index + 1}`}
@@ -213,7 +213,7 @@ export default async function AdminSettingsPage() {
           </div>
         </section>
 
-        <section className="rounded-[3px] border border-slate-200 bg-white p-6">
+        <section className="rounded-lg border border-slate-200 bg-white p-6">
           <h2 className="font-bold text-slate-800">Archivage</h2>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             <Field
@@ -229,7 +229,7 @@ export default async function AdminSettingsPage() {
         <SubmitButton label="Enregistrer les paramètres" />
       </form>
 
-      <section className="rounded-[3px] border border-slate-200 bg-white p-6">
+      <section className="rounded-lg border border-slate-200 bg-white p-6">
         <h2 className="font-bold text-slate-800">Besoins de l&rsquo;hôpital</h2>
         <p className="mt-1 text-sm text-slate-600">
           Ces besoins sont affichés sur la page « Faire un don ».
@@ -237,7 +237,7 @@ export default async function AdminSettingsPage() {
 
         <div className="mt-5 space-y-3">
           {needs.map((need) => (
-            <div key={need.id} className="rounded-[3px] border border-slate-200 p-4">
+            <div key={need.id} className="rounded-lg border border-slate-200 p-4">
               <form action={saveDonationNeed} className="grid gap-3">
                 <input type="hidden" name="id" value={need.id} />
                 <div className="grid gap-3 sm:grid-cols-4">
@@ -292,7 +292,7 @@ export default async function AdminSettingsPage() {
 
         <form
           action={saveDonationNeed}
-          className="mt-5 grid gap-3 rounded-[3px] bg-slate-50 p-4"
+          className="mt-5 grid gap-3 rounded-lg bg-slate-50 p-4"
         >
           <p className="text-sm font-semibold text-slate-700">
             Ajouter un besoin

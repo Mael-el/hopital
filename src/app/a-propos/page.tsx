@@ -86,7 +86,7 @@ export default async function AboutPage() {
           </figure>
         </div>
 
-        <div className="relative mx-auto mt-14 h-72 max-w-5xl overflow-hidden rounded-[4px] bg-sand-100 sm:h-96">
+        <div className="relative mx-auto mt-14 h-72 max-w-5xl overflow-hidden rounded-xl bg-sand-100 sm:h-96">
           <Image
             src="/images/equipe-soins.jpg"
             alt="L'équipe soignante de l'hôpital La Croix de Zinvié"
@@ -130,8 +130,8 @@ export default async function AboutPage() {
       {/* ------------------------- MISSION & VISION ------------------------- */}
       <section className="bg-white py-16 lg:py-20">
         <div className="container-page grid gap-6 lg:grid-cols-2">
-          <div className="rounded-[4px] bg-brand-900 p-8 text-white sm:p-10">
-            <span className="flex h-12 w-12 items-center justify-center rounded-[3px] bg-white/10">
+          <div className="rounded-xl bg-brand-900 p-8 text-white sm:p-10">
+            <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-white/10">
               <Icon name="shield" className="h-6 w-6 text-cross-300" />
             </span>
             <h2 className="mt-5 text-xl font-bold sm:text-2xl">
@@ -141,8 +141,8 @@ export default async function AboutPage() {
               {data.missionText}
             </p>
           </div>
-          <div className="rounded-[4px] border border-brand-100 bg-brand-50 p-8 sm:p-10">
-            <span className="flex h-12 w-12 items-center justify-center rounded-[3px] bg-white text-brand-700">
+          <div className="rounded-xl border border-brand-100 bg-brand-50 p-8 sm:p-10">
+            <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-white text-brand-700">
               <Icon name="globe" className="h-6 w-6" />
             </span>
             <h2 className="mt-5 text-xl font-bold text-brand-900 sm:text-2xl">
@@ -203,7 +203,7 @@ export default async function AboutPage() {
               key={value.id}
               className="card p-7 text-center transition-shadow "
             >
-              <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-[4px] bg-cross-50 text-cross-600">
+              <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-xl bg-cross-50 text-cross-600">
                 <Icon
                   name={(value.icon as IconName) ?? "heart"}
                   className="h-7 w-7"
@@ -253,9 +253,9 @@ export default async function AboutPage() {
             ))}
           </div>
 
-          <div className="mt-10 rounded-[4px] border border-brand-100 bg-white p-6 sm:p-8">
+          <div className="mt-10 rounded-xl border border-brand-100 bg-white p-6 sm:p-8">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
-              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[3px] bg-brand-50 text-brand-700">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-care-50 text-care-700">
                 <Icon name="users" className="h-6 w-6" />
               </span>
               <div>
@@ -289,7 +289,7 @@ export default async function AboutPage() {
 
       {/* ------------------------------ CTA -------------------------------- */}
       <section className="container-page py-16">
-        <div className="flex flex-col items-center justify-between gap-6 rounded-[4px] bg-brand-900 px-8 py-10 text-center text-white sm:flex-row sm:text-left">
+        <div className="flex flex-col items-center justify-between gap-6 rounded-xl bg-brand-900 px-8 py-10 text-center text-white sm:flex-row sm:text-left">
           <div>
             <h2 className="text-xl font-bold sm:text-2xl">
               Besoin d&apos;un soin ou d&apos;une information ?

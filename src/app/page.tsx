@@ -36,7 +36,7 @@ export default async function HomePage() {
   return (
     <>
       {/* ============================ HERO ============================ */}
-      <section className="border-b border-sand-200">
+      <section className="border-b border-sand-200 bg-gradient-to-b from-brand-50 via-white to-white">
         <div className="container-page grid items-stretch gap-0 lg:grid-cols-[1.02fr_1fr]">
           {/* Colonne texte */}
           <div className="flex flex-col justify-center py-12 lg:py-20 lg:pr-14">
@@ -162,7 +162,7 @@ export default async function HomePage() {
               href={item.href}
               className="group flex items-start gap-4 bg-white p-7 transition hover:bg-brand-50/70"
             >
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[3px] bg-brand-50 text-brand-700">
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-care-50 text-care-700">
                 <Icon name={item.icon} className="h-5 w-5" />
               </span>
               <span>
@@ -210,7 +210,7 @@ export default async function HomePage() {
                 key={pillar.title}
                 className="flex gap-5 border-b border-sand-200 py-6 first:pt-0 lg:first:pt-0"
               >
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[3px] bg-brand-50 text-brand-700">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-care-50 text-care-700">
                   <Icon
                     name={(pillar.icon as IconName) ?? "heart"}
                     className="h-5 w-5"
@@ -354,7 +354,7 @@ export default async function HomePage() {
       </section>
 
       {/* ============================== DON ============================ */}
-      <section className="border-t-4 border-cross-600 bg-brand-950 py-16 text-white lg:py-20">
+      <section className="border-t-4 border-cross-600 bg-gradient-to-br from-brand-950 via-brand-900 to-care-950 py-16 text-white lg:py-20">
         <div className="container-page grid gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
             <p className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-cross-300">

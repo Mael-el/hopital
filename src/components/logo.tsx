@@ -4,7 +4,7 @@ import { Icon } from "./icons";
 export function Logo({ compact = false }: { compact?: boolean }) {
   return (
     <Link href="/" className="group flex items-center gap-3">
-      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[3px] bg-brand-800 text-white transition-colors group-hover:bg-cross-600">
+      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-brand-800 text-white transition-colors group-hover:bg-cross-600">
         <Icon name="cross" className="h-5 w-5" strokeWidth={2.2} />
       </span>
       {!compact && (

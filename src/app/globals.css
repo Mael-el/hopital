@@ -1,33 +1,48 @@
 @import "tailwindcss";
 
 @theme {
-  /* Palette sobre et institutionnelle */
-  --color-brand-50: #f3f7f8;
-  --color-brand-100: #e3ecee;
-  --color-brand-200: #c6d8dc;
-  --color-brand-300: #9ab8bf;
-  --color-brand-400: #63919b;
-  --color-brand-500: #417784;
-  --color-brand-600: #325f6b;
-  --color-brand-700: #294d57;
-  --color-brand-800: #243f47;
-  --color-brand-900: #20363d;
-  --color-brand-950: #11242a;
+  /* Palette santé : bleu médical + turquoise, blanc bleuté clinique.
+     Le rouge « cross » reste réservé aux urgences, aux dons et à la Croix. */
+  --color-brand-50: #eff8fd;
+  --color-brand-100: #ddf1fa;
+  --color-brand-200: #bfe4f6;
+  --color-brand-300: #94d0ef;
+  --color-brand-400: #61b4e4;
+  --color-brand-500: #3d97d6;
+  --color-brand-600: #0b6fa4;
+  --color-brand-700: #0a5c89;
+  --color-brand-800: #0d4c6f;
+  --color-brand-900: #0e405e;
+  --color-brand-950: #092a40;
 
-  --color-cross-50: #fdf4f3;
-  --color-cross-100: #fae3e1;
-  --color-cross-200: #f3cbc7;
-  --color-cross-300: #e4a49e;
-  --color-cross-400: #d17168;
-  --color-cross-500: #c0352c;
-  --color-cross-600: #a62a23;
-  --color-cross-700: #88221d;
+  /* Turquoise santé : accents de soins, icônes, progression */
+  --color-care-50: #effaf8;
+  --color-care-100: #d7f2ec;
+  --color-care-200: #b2e4da;
+  --color-care-300: #7fd1c2;
+  --color-care-400: #4bb7a6;
+  --color-care-500: #269e8c;
+  --color-care-600: #0e9384;
+  --color-care-700: #0f7669;
+  --color-care-800: #115e56;
+  --color-care-900: #0f4d47;
+  --color-care-950: #052e2b;
 
-  --color-sand-50: #fcfbf9;
-  --color-sand-100: #f5f3ef;
-  --color-sand-200: #e9e6e0;
-  --color-sand-300: #d8d4cb;
-  --color-sand-400: #bdb8ac;
+  --color-cross-50: #fef4f2;
+  --color-cross-100: #feeae7;
+  --color-cross-200: #fdd5cf;
+  --color-cross-300: #fab5a9;
+  --color-cross-400: #f58a78;
+  --color-cross-500: #d92d20;
+  --color-cross-600: #b42318;
+  --color-cross-700: #912018;
+
+  /* Neutres froids « cliniques » (anciennement sable chaud) */
+  --color-sand-50: #f7fafc;
+  --color-sand-100: #eff5f8;
+  --color-sand-200: #dde8ee;
+  --color-sand-300: #c3d5df;
+  --color-sand-400: #9db4c2;
 
   /* Polices auto-hébergées (Fontsource) : aucun appel à Google Fonts */
   --font-sans: "Inter Variable", Inter, ui-sans-serif, system-ui, -apple-system,
@@ -102,20 +117,20 @@ h4 {
     }
   }
 
-  /* ---------------- Boutons : classiques, sobres ---------------- */
+  /* ---------------- Boutons : modernes, doux ---------------- */
   .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    border-radius: 3px;
+    border-radius: 10px;
     padding: 0.6875rem 1.375rem;
     font-size: 0.8125rem;
     font-weight: 600;
     letter-spacing: 0.02em;
     line-height: 1.25rem;
     transition: background-color 0.18s ease, border-color 0.18s ease,
-      color 0.18s ease;
+      color 0.18s ease, box-shadow 0.18s ease;
     cursor: pointer;
     white-space: nowrap;
   }
@@ -127,8 +142,9 @@ h4 {
   }
 
   .btn-primary:hover {
-    background-color: var(--color-brand-900);
-    border-color: var(--color-brand-900);
+    background-color: var(--color-brand-800);
+    border-color: var(--color-brand-800);
+    box-shadow: 0 8px 18px -8px rgba(11, 111, 164, 0.55);
   }
 
   .btn-accent {
@@ -140,6 +156,7 @@ h4 {
   .btn-accent:hover {
     background-color: var(--color-cross-700);
     border-color: var(--color-cross-700);
+    box-shadow: 0 8px 18px -8px rgba(180, 35, 24, 0.5);
   }
 
   .btn-outline {
@@ -164,11 +181,14 @@ h4 {
     color: var(--color-brand-800);
   }
 
-  /* ---------------- Cartes : bordures fines, sans ombre ---------------- */
+  /* ---------------- Cartes : arrondies, ombre douce ---------------- */
   .card {
     background-color: white;
     border: 1px solid var(--color-sand-200);
-    border-radius: 4px;
+    border-radius: 16px;
+    box-shadow:
+      0 1px 2px rgba(9, 42, 64, 0.05),
+      0 12px 32px -20px rgba(9, 42, 64, 0.22);
   }
 
   /* ---------------- Champs de formulaire ---------------- */
@@ -184,7 +204,7 @@ h4 {
 
   .field-input {
     width: 100%;
-    border-radius: 3px;
+    border-radius: 10px;
     border: 1px solid var(--color-slate-300);
     background-color: white;
     padding: 0.625rem 0.8125rem;
@@ -196,22 +216,22 @@ h4 {
 
   .field-input:focus {
     border-color: var(--color-brand-600);
-    box-shadow: 0 0 0 3px rgba(50, 95, 107, 0.12);
+    box-shadow: 0 0 0 4px rgba(11, 111, 164, 0.14);
   }
 
   .badge {
     display: inline-flex;
     align-items: center;
     gap: 0.375rem;
-    border-radius: 2px;
-    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    padding: 0.25rem 0.65rem;
     font-size: 0.7rem;
     font-weight: 600;
     letter-spacing: 0.05em;
     text-transform: uppercase;
   }
 
-  /* ---------------- Titre de section classique ---------------- */
+  /* ---------------- Titres de section ---------------- */
   .section-title {
     font-family: var(--font-serif);
     font-size: 1.75rem;
@@ -234,7 +254,7 @@ h4 {
     font-weight: 700;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--color-cross-600);
+    color: var(--color-care-700);
   }
 
   .section-label::after {
@@ -242,7 +262,7 @@ h4 {
     display: block;
     width: 2.5rem;
     height: 1px;
-    background-color: var(--color-cross-300);
+    background-color: var(--color-care-300);
   }
 
   /* ---------------- Contenu éditorial ---------------- */
@@ -279,7 +299,7 @@ h4 {
     top: 0.72rem;
     width: 0.4rem;
     height: 1px;
-    background-color: var(--color-cross-400);
+    background-color: var(--color-care-400);
   }
 }
 

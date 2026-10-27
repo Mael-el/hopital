@@ -48,7 +48,7 @@ export default async function PrintableSheetPage() {
         {/* En-tête */}
         <div className="flex flex-wrap items-start justify-between gap-6 border-b-2 border-brand-800 pb-5">
           <div className="flex items-center gap-4">
-            <span className="flex h-14 w-14 items-center justify-center rounded-[3px] bg-brand-800 text-white">
+            <span className="flex h-14 w-14 items-center justify-center rounded-lg bg-brand-800 text-white">
               <Icon name="cross" className="h-7 w-7" strokeWidth={2.2} />
             </span>
             <div>

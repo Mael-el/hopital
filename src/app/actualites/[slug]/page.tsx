@@ -59,7 +59,7 @@ export default async function NewsArticlePage({ params }: Props) {
             ))}
           </div>
 
-          <div className="mt-10 rounded-[4px] bg-brand-50 p-6">
+          <div className="mt-10 rounded-xl bg-brand-50 p-6">
             <p className="text-sm leading-relaxed text-brand-900">
               Pour toute information sur cette actualité, contactez l&apos;accueil
               de l&apos;hôpital « La Croix » de Zinvié au{" "}

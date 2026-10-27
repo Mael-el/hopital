@@ -30,7 +30,7 @@ export default async function AdminDonationsPage() {
       />
 
       <div className="mb-6 grid gap-4 sm:grid-cols-3">
-        <div className="rounded-[3px] border border-slate-200 bg-white p-5">
+        <div className="rounded-lg border border-slate-200 bg-white p-5">
           <p className="text-xs font-bold uppercase tracking-wider text-slate-500">
             Total collecté
           </p>
@@ -38,13 +38,13 @@ export default async function AdminDonationsPage() {
             {formatFcfa(total)}
           </p>
         </div>
-        <div className="rounded-[3px] border border-slate-200 bg-white p-5">
+        <div className="rounded-lg border border-slate-200 bg-white p-5">
           <p className="text-xs font-bold uppercase tracking-wider text-slate-500">
             Nombre de dons
           </p>
           <p className="mt-2 text-2xl font-bold text-slate-900">{all.length}</p>
         </div>
-        <div className="rounded-[3px] border border-slate-200 bg-white p-5">
+        <div className="rounded-lg border border-slate-200 bg-white p-5">
           <p className="text-xs font-bold uppercase tracking-wider text-slate-500">
             En attente de confirmation
           </p>
@@ -61,7 +61,7 @@ export default async function AdminDonationsPage() {
           icon="hand-heart"
         />
       ) : (
-        <div className="overflow-x-auto rounded-[3px] border border-slate-200 bg-white">
+        <div className="overflow-x-auto rounded-lg border border-slate-200 bg-white">
           <table className="w-full text-left text-sm">
             <thead className="bg-slate-50 text-xs uppercase tracking-wider text-slate-500">
               <tr>
@@ -92,7 +92,7 @@ export default async function AdminDonationsPage() {
                       {donation.reference}
                     </p>
                     {donation.message && (
-                      <p className="mt-2 max-w-sm rounded-[3px] bg-sand-100 p-2 text-xs italic text-slate-600">
+                      <p className="mt-2 max-w-sm rounded-lg bg-sand-100 p-2 text-xs italic text-slate-600">
                         « {donation.message} »
                       </p>
                     )}
@@ -122,7 +122,7 @@ export default async function AdminDonationsPage() {
                         <select
                           name="status"
                           defaultValue={donation.status}
-                          className="rounded-[3px] border border-slate-200 px-2 py-1 text-xs"
+                          className="rounded-lg border border-slate-200 px-2 py-1 text-xs"
                         >
                           <option value="pending">En attente</option>
                           <option value="success">Confirmé</option>
@@ -130,7 +130,7 @@ export default async function AdminDonationsPage() {
                         </select>
                         <button
                           type="submit"
-                          className="rounded-[3px] border border-slate-200 px-3 py-1.5 text-xs font-semibold text-slate-700 hover:border-brand-400 hover:text-brand-700"
+                          className="rounded-lg border border-slate-200 px-3 py-1.5 text-xs font-semibold text-slate-700 hover:border-brand-400 hover:text-brand-700"
                         >
                           OK
                         </button>
@@ -139,7 +139,7 @@ export default async function AdminDonationsPage() {
                         <form action={markReceiptSent.bind(null, donation.id)}>
                           <button
                             type="submit"
-                            className="rounded-[3px] border border-brand-200 px-3 py-1.5 text-xs font-semibold text-brand-700 hover:bg-brand-50"
+                            className="rounded-lg border border-brand-200 px-3 py-1.5 text-xs font-semibold text-brand-700 hover:bg-brand-50"
                           >
                             <Icon name="mail" className="mr-1 inline h-3 w-3" />
                             Reçu envoyé

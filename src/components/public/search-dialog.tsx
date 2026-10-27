@@ -130,12 +130,12 @@ export function SearchDialog() {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="flex h-10 items-center gap-2 rounded-[3px] border border-sand-300 px-3 text-sm text-slate-500 transition hover:border-brand-600 hover:text-brand-800"
+        className="flex h-10 items-center gap-2 rounded-lg border border-sand-300 px-3 text-sm text-slate-500 transition hover:border-brand-600 hover:text-brand-800"
         aria-label="Rechercher sur le site"
       >
         <Icon name="scan" className="h-4 w-4 rotate-90" />
         <span className="hidden lg:inline">Rechercher…</span>
-        <kbd className="hidden rounded-[2px] border border-sand-300 px-1.5 py-0.5 font-sans text-[0.65rem] font-semibold text-slate-400 lg:inline">
+        <kbd className="hidden rounded-md border border-sand-300 px-1.5 py-0.5 font-sans text-[0.65rem] font-semibold text-slate-400 lg:inline">
           ⌘K
         </kbd>
       </button>
@@ -165,7 +165,7 @@ export function SearchDialog() {
               <button
                 type="button"
                 onClick={() => setOpen(false)}
-                className="rounded-[3px] border border-sand-300 px-2 py-1 text-[0.7rem] font-semibold text-slate-500"
+                className="rounded-lg border border-sand-300 px-2 py-1 text-[0.7rem] font-semibold text-slate-500"
               >
                 ÉCHAP
               </button>
@@ -183,7 +183,7 @@ export function SearchDialog() {
                         key={suggestion}
                         type="button"
                         onClick={() => setQuery(suggestion)}
-                        className="rounded-[3px] border border-sand-300 px-3 py-1.5 text-sm text-slate-600 transition hover:border-brand-600 hover:text-brand-800"
+                        className="rounded-lg border border-sand-300 px-3 py-1.5 text-sm text-slate-600 transition hover:border-brand-600 hover:text-brand-800"
                       >
                         {suggestion}
                       </button>
@@ -218,7 +218,7 @@ export function SearchDialog() {
                           index === active ? "bg-brand-50" : "hover:bg-sand-50"
                         }`}
                       >
-                        <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-[3px] bg-brand-50 text-brand-700">
+                        <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-care-50 text-care-700">
                           <Icon name={TYPE_ICON[result.type]} className="h-4 w-4" />
                         </span>
                         <span className="min-w-0 flex-1">

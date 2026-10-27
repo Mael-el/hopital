@@ -21,7 +21,7 @@ export function MobileActionBar({
   return (
     <nav
       aria-label="Actions rapides"
-      className="no-print fixed inset-x-0 bottom-0 z-40 grid grid-cols-3 border-t border-sand-300 bg-white/95 shadow-[0_-1px_8px_rgba(17,36,42,0.08)] backdrop-blur lg:hidden"
+      className="no-print fixed inset-x-0 bottom-0 z-40 grid grid-cols-3 border-t border-sand-300 bg-white/95 shadow-[0_-1px_8px_rgba(9,42,64,0.08)] backdrop-blur lg:hidden"
       style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
     >
       <a href={dial(phone)} className={`${itemClass} text-brand-800`}>
