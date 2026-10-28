@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: hopital-lacroix-demo
+    runtime: node
+    plan: free
+    region: frankfurt
+    branch: main
+    autoDeploy: true
+    buildCommand: npm ci --include=dev && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: FEDAPAY_ENV
+        value: sandbox
+      - key: DATABASE_URL
+        fromDatabase:
+          name: hopital-lacroix-demo-db
+          property: connectionString
+
+databases:
+  - name: hopital-lacroix-demo-db
+    databaseName: hopital_lacroix_demo
+    user: hopital_lacroix_demo
+    plan: free
+    region: frankfurt
+    postgresMajorVersion: "16"
