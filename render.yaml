@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: hopital-lacroix-demo
+    runtime: node
+    plan: free
+    region: frankfurt
+    branch: main
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: FEDAPAY_ENV
+        value: sandbox
+      - key: DATABASE_URL
+        sync: false

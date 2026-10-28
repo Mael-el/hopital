@@ -222,7 +222,7 @@ src/
    site fréquente par l'administrateur ; procédure de restauration à tester.
 5. PostgreSQL 15 avec RLS recommandé et accès restreint à l'application.
 
-### Démo gratuite avec Vercel + Neon
+### Démo gratuite avec Render + Neon
 
 1. Créer un nouveau projet Neon. Copier l'URL **pooled** dans
    `DATABASE_URL`, et l'URL **direct** dans `DATABASE_URL_UNPOOLED`. Conserver
@@ -233,15 +233,15 @@ src/
 3. Sur cette base Neon neuve, exécuter `npm run db:push`, puis
    `npm run db:seed`. Le seed refuse les bases qui contiennent déjà des données
    et ne doit être lancé qu'une seule fois.
-4. Publier le code sur un dépôt GitHub privé, puis l'importer dans Vercel.
-   Vercel détecte Next.js automatiquement. Ajouter au projet Vercel
-   `DATABASE_URL`, `DATABASE_URL_UNPOOLED` et `FEDAPAY_ENV=sandbox` pour les
-   environnements utilisés, puis déployer.
+4. Publier le code sur un dépôt GitHub privé contenant `render.yaml`, puis
+   ouvrir le Blueprint dans le Dashboard Render. Choisir le plan gratuit et
+   renseigner `DATABASE_URL` avec l'URL poolée Neon lorsqu'il est demandé.
+   Render détecte Next.js et utilise `/api/health` pour vérifier l'application.
 5. Après le premier déploiement, définir `NEXT_PUBLIC_SITE_URL` à l'URL
-   `https://...vercel.app` du site et redéployer pour que les métadonnées et le
+   `https://...onrender.com` du site et redéployer pour que les métadonnées et le
    sitemap utilisent l'adresse de la démo.
 
-Ne pas ajouter les variables `SEED_*_PASSWORD` dans Vercel : elles ne servent
+Ne pas ajouter les variables `SEED_*_PASSWORD` dans Render : elles ne servent
 qu'au chargement initial depuis un environnement local sécurisé. Ne pas saisir
 de vraies données de patients ni activer les paiements réels sur cette démo.
 Les offres gratuites peuvent mettre la base en veille et ne fournissent pas les
