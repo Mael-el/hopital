@@ -227,17 +227,27 @@ src/
 
 ### Démo gratuite entièrement sur Render
 
-1. Le Blueprint `render.yaml` crée le service web et une base PostgreSQL
-   Render gratuite dans la même région. Le service reçoit automatiquement
-   `DATABASE_URL` depuis la base : aucune URL de base n'est à saisir dans
-   l'environnement du service.
-2. Créer `.env` à partir de `.env.example`, puis renseigner l'URL **External
-   Database URL** affichée dans Render → base PostgreSQL → Connect. Choisir
-   quatre mots de passe admin aléatoires et distincts (16 caractères minimum).
-3. Depuis la machine locale, exécuter une seule fois `npm run db:push`, puis
-   `npm run db:seed`. Le seed refuse les bases qui contiennent déjà des données.
-   Ne pas placer les mots de passe `SEED_*` dans Render.
-4. Le service Render utilise `/api/health` pour vérifier l'application.
+1. Connecter le dépôt GitHub à Render en choisissant **Blueprint**. Le fichier
+   `render.yaml` crée le service web et une base PostgreSQL Render gratuite dans
+   la même région. Il ne contient aucun mot de passe ni clé d'API ; Render
+   transmet automatiquement `DATABASE_URL` du service de base au service web.
+   Aucun secret FedaPay, e-mail ou mot de passe administrateur n'est requis pour
+   lancer le premier déploiement.
+2. Après la création de la base, ouvrir Render → base PostgreSQL → **Connect** et
+   récupérer l'URL **External Database URL**. La conserver uniquement dans un
+   fichier local ignoré par Git, par exemple `.env.local` (ne jamais la publier).
+3. Depuis la machine locale, placer l'URL externe de la base dans `.env.local`,
+  puis exécuter une seule fois `DOTENV_CONFIG_PATH=.env.local npm run db:push`
+  pour créer les tables. Pour charger le contenu de démonstration, définir
+  ensuite quatre mots de passe admin aléatoires et distincts (16 caractères
+  minimum) dans `.env.local`, puis exécuter
+  `DOTENV_CONFIG_PATH=.env.local npm run db:seed`. Le seed refuse les bases qui
+  contiennent déjà des données. Ne pas l'exécuter de nouveau sur une base déjà
+  initialisée.
+4. Les clés FedaPay et Resend sont facultatives pour une démo et peuvent être
+   ajoutées plus tard dans Render → service web → **Environment**. Garder
+   FedaPay en mode `sandbox` jusqu'à une configuration de paiement validée.
+5. Le service Render utilise `/api/health` pour vérifier la connexion à la base.
    Après le premier déploiement, définir `NEXT_PUBLIC_SITE_URL` à l'URL
    `https://...onrender.com` du site et redéployer pour que les métadonnées et le
    sitemap utilisent l'adresse de la démo.

@@ -5,6 +5,7 @@ services:
     plan: free
     region: frankfurt
     branch: main
+    autoDeploy: true
     buildCommand: npm ci --include=dev && npm run build
     startCommand: npm start
     healthCheckPath: /api/health
