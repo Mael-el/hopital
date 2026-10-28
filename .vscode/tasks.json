@@ -1,0 +1,16 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Démarrer le site (dev)",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"-e",
+				"const { spawnSync } = require(\"node:child_process\"); const { dbCredentials } = require(\"./drizzle.config.json\"); const result = spawnSync(\"npm\", [\"run\", \"dev\"], { env: { ...process.env, DATABASE_URL: dbCredentials.url }, stdio: \"inherit\" }); process.exit(result.status ?? 1);"
+			],
+			"isBackground": true,
+			"problemMatcher": []
+		}
+	]
+}
