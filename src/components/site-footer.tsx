@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { toDialHref } from "@/lib/format";
 import { getSettings } from "@/lib/settings";
 import { Icon, type IconName } from "./icons";
 
@@ -214,29 +213,6 @@ export async function SiteFooter() {
               >
                 Espace administration
               </Link>
-            </p>
-            <p className="flex flex-wrap items-center justify-center gap-2 border-white/10 md:border-l md:pl-6">
-              <Icon name="sparkles" className="h-3.5 w-3.5 text-brand-300" />
-              <span>
-                Conçu &amp; maintenu par{" "}
-                <span className="font-semibold text-white/90">
-                  {settings.developerName}
-                </span>{" "}
-                —{" "}
-                <a
-                  href={`mailto:${settings.developerEmail}`}
-                  className="transition hover:text-white"
-                >
-                  {settings.developerEmail}
-                </a>{" "}
-                ·{" "}
-                <a
-                  href={`tel:${toDialHref(settings.developerPhone)}`}
-                  className="transition hover:text-white"
-                >
-                  {settings.developerPhone}
-                </a>
-              </span>
             </p>
           </div>
         </div>

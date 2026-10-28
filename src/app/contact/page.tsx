@@ -6,7 +6,6 @@ import { PageHero } from "@/components/breadcrumb";
 import { Icon } from "@/components/icons";
 import { ContactForm } from "@/components/public/contact-form";
 import { EMERGENCY_NUMBERS, whatsappLink } from "@/components/public/emergency-panel";
-import { toDialHref } from "@/lib/format";
 import { getSettings } from "@/lib/settings";
 
 export const dynamic = "force-dynamic";
@@ -243,46 +242,6 @@ export default async function ContactPage() {
               <p className="mt-2 text-xs text-slate-500">
                 Web TV : {settings.webTv}
               </p>
-            </div>
-
-            {/* Développeur & maintenance */}
-            <div className="card p-6">
-              <h2 className="font-serif text-lg font-bold text-brand-900">
-                {settings.developerRole}
-              </h2>
-              <p className="mt-1 text-sm text-slate-600">{settings.developerNote}</p>
-              <div className="mt-4 space-y-2 border-t border-sand-200 pt-4 text-sm">
-                <p className="flex flex-wrap items-center justify-between gap-2">
-                  <span className="flex items-center gap-2 text-slate-600">
-                    <Icon name="users" className="h-4 w-4 text-brand-700" />
-                    {settings.developerName}
-                  </span>
-                </p>
-                <p className="flex flex-wrap items-center justify-between gap-2">
-                  <span className="flex items-center gap-2 text-slate-600">
-                    <Icon name="mail" className="h-4 w-4 text-brand-700" />
-                    E-mail
-                  </span>
-                  <a
-                    href={`mailto:${settings.developerEmail}`}
-                    className="break-all text-sm font-medium text-brand-700 hover:underline"
-                  >
-                    {settings.developerEmail}
-                  </a>
-                </p>
-                <p className="flex flex-wrap items-center justify-between gap-2">
-                  <span className="flex items-center gap-2 text-slate-600">
-                    <Icon name="phone" className="h-4 w-4 text-brand-700" />
-                    Téléphone
-                  </span>
-                  <a
-                    href={`tel:${toDialHref(settings.developerPhone)}`}
-                    className="text-sm font-medium text-brand-700 hover:underline"
-                  >
-                    {settings.developerPhone}
-                  </a>
-                </p>
-              </div>
             </div>
 
             {/* Numéros d'urgence */}

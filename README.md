@@ -46,10 +46,9 @@ page de remerciement.
 | Gestionnaire demandes & dons | `demandes` | Demandes de consultation, dons, messages |
 | Développeur & maintenance | `developpeur` | Accès complet au back-office + maintenance technique |
 
-**Développeur référent** : Ismail AGOHOUNDJE — `ismailagohoundje14@gmail.com` ·
-`01 61 79 19 67` (Bénin). Ses coordonnées sont affichées dans le pied de
-page et sur la page *Contact*, et restent modifiables depuis
-*Admin → Paramètres → Développeur & maintenance technique*.
+Les coordonnées de maintenance technique restent configurables depuis
+*Admin → Paramètres → Développeur & maintenance technique* et ne sont pas
+affichées sur les pages publiques.
 
 Les mots de passe doivent être définis dans l'environnement avant l'exécution
 du seed. **Aucune inscription publique n'est possible.**
