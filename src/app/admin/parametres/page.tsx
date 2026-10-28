@@ -47,6 +47,12 @@ export default async function AdminSettingsPage() {
               defaultValue={settings.shortName}
             />
             <Field label="Année de création" name="founded" defaultValue={settings.founded} />
+            <Field label="Numéro IFU" name="ifu" defaultValue={settings.ifu} />
+            <Field
+              label="Date de délivrance de l'IFU"
+              name="ifuIssueDate"
+              defaultValue={settings.ifuIssueDate}
+            />
             <div className="sm:col-span-2">
               <Field label="Accroche" name="tagline" defaultValue={settings.tagline} />
             </div>
@@ -92,12 +98,12 @@ export default async function AdminSettingsPage() {
               name="phoneEmergency"
               defaultValue={settings.phoneEmergency}
             />
-            <Field label="E-mail principal" name="email" type="email" defaultValue={settings.email} />
-            <Field label="E-mail secondaire" name="emailSecondary" type="email" defaultValue={settings.emailSecondary} />
-            <Field label="E-mail de la direction" name="emailDirection" type="email" defaultValue={settings.emailDirection} />
-            <Field label="E-mail laboratoire / banque du sang" name="emailLaboratory" type="email" defaultValue={settings.emailLaboratory} />
+            <Field label="E-mail de la direction" name="email" type="email" defaultValue={settings.email} />
+            <Field label="E-mail du secrétariat" name="emailSecondary" type="email" defaultValue={settings.emailSecondary} />
+            <Field label="E-mail de l'économat" name="emailEconomat" type="email" defaultValue={settings.emailEconomat} />
             <Field label="Site officiel" name="website" defaultValue={settings.website} />
             <Field label="Site secondaire" name="websiteSecondary" defaultValue={settings.websiteSecondary} />
+            <Field label="Web TV" name="webTv" defaultValue={settings.webTv} />
             <Field label="Facebook" name="facebook" defaultValue={settings.facebook} />
             <Field label="WhatsApp" name="whatsapp" defaultValue={settings.whatsapp} />
             <Field label="Coordonnées GPS" name="mapCoordinates" defaultValue={settings.mapCoordinates} />

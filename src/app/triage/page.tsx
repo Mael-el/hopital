@@ -63,8 +63,8 @@ export default function TriagePage() {
               </h2>
               <p className="mt-1 text-sm leading-relaxed text-slate-600">
                 L&apos;accueil de l&apos;hôpital vous oriente par téléphone au{" "}
-                <a href="tel:+22997214839" className="font-semibold text-brand-700 underline">
-                  +229 97 21 48 39
+                <a href="tel:+2290195968400" className="font-semibold text-brand-700 underline">
+                  +229 01 95 96 84 00
                 </a>{" "}
                 du lundi au vendredi de 8h00 à 16h00.
               </p>

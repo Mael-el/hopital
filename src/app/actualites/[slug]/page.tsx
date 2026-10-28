@@ -63,7 +63,7 @@ export default async function NewsArticlePage({ params }: Props) {
             <p className="text-sm leading-relaxed text-brand-900">
               Pour toute information sur cette actualité, contactez l&apos;accueil
               de l&apos;hôpital « La Croix » de Zinvié au{" "}
-              <strong>+229 97 21 48 39</strong> ou par email à{" "}
+              <strong>+229 01 95 96 84 00</strong> ou par email à{" "}
               <strong>hlacroixdezinvie@yahoo.com</strong>.
             </p>
             <div className="mt-4 flex flex-wrap gap-3">

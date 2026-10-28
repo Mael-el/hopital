@@ -71,7 +71,7 @@ export default async function HomePage() {
                     Urgences
                   </dt>
                   <dd className="mt-0.5 text-sm font-medium text-slate-700">
-                    24h/24 et 7j/7 — +229 97 21 48 39
+                    24h/24 et 7j/7 — +229 01 95 96 84 00
                   </dd>
                 </div>
               </div>

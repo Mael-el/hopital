@@ -52,7 +52,7 @@ export default async function ServiceDetailPage({ params }: Props) {
             Demander une consultation
           </Link>
           <a
-            href={`tel:+22997214839`}
+            href={`tel:+2290195886853`}
             className="btn btn-outline border-white/40 text-white hover:bg-white hover:text-brand-900"
           >
             <Icon name="phone" className="h-4 w-4" />

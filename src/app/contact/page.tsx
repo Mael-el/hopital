@@ -180,10 +180,9 @@ export default async function ContactPage() {
 
               <div className="mt-5 space-y-2 border-t border-sand-200 pt-4 text-sm">
                 {[
-                  { icon: "mail" as const, label: "E-mail officiel", value: settings.email, href: `mailto:${settings.email}` },
+                  { icon: "mail" as const, label: "Direction", value: settings.email, href: `mailto:${settings.email}` },
                   { icon: "mail" as const, label: "Secrétariat", value: settings.emailSecondary, href: `mailto:${settings.emailSecondary}` },
-                  { icon: "users" as const, label: "Direction de l'hôpital", value: settings.emailDirection, href: `mailto:${settings.emailDirection}` },
-                  { icon: "droplet" as const, label: "Laboratoire & banque du sang", value: settings.emailLaboratory, href: `mailto:${settings.emailLaboratory}` },
+                  { icon: "users" as const, label: "Économat", value: settings.emailEconomat, href: `mailto:${settings.emailEconomat}` },
                 ].map((row) => (
                   <div key={row.label} className="flex flex-wrap items-center justify-between gap-2">
                     <span className="flex items-center gap-2 text-slate-600">
@@ -237,6 +236,12 @@ export default async function ContactPage() {
               <p className="mt-4 text-xs text-slate-500">
                 Coordonnées GPS : {settings.mapCoordinates} — Plus code :{" "}
                 {settings.plusCode}
+              </p>
+              <p className="mt-2 text-xs text-slate-500">
+                Numéro IFU : {settings.ifu} — délivré le {settings.ifuIssueDate}
+              </p>
+              <p className="mt-2 text-xs text-slate-500">
+                Web TV : {settings.webTv}
               </p>
             </div>
 

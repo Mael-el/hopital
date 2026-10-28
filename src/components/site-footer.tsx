@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { toDialHref } from "@/lib/format";
 import { getSettings } from "@/lib/settings";
 import { Icon, type IconName } from "./icons";
@@ -26,9 +27,13 @@ export async function SiteFooter() {
         {/* Identité */}
         <div className="lg:border-r lg:border-white/10 lg:pr-8">
           <div className="flex items-center gap-3">
-            <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-white text-brand-800">
-              <Icon name="cross" className="h-6 w-6" strokeWidth={2} />
-            </span>
+            <Image
+              src="/images/logo.jpeg"
+              alt="Logo de l'Hôpital La Croix de Zinvié"
+              width={228}
+              height={220}
+              className="h-12 w-12 rounded-lg object-contain"
+            />
             <span className="leading-tight">
               <span className="block font-serif text-lg font-bold text-white">
                 Hôpital La Croix
@@ -143,12 +148,19 @@ export async function SiteFooter() {
             ))}
             <li className="flex gap-3">
               <Icon name="mail" className="mt-0.5 h-4 w-4 shrink-0 text-brand-300" />
-              <a
-                href={`mailto:${settings.email}`}
-                className="break-all transition hover:text-white"
-              >
-                {settings.email}
-              </a>
+              <span className="space-y-1">
+                {[settings.email, settings.emailSecondary, settings.emailEconomat]
+                  .filter(Boolean)
+                  .map((email) => (
+                    <a
+                      key={email}
+                      href={`mailto:${email}`}
+                      className="block break-all transition hover:text-white"
+                    >
+                      {email}
+                    </a>
+                  ))}
+              </span>
             </li>
           </ul>
         </div>

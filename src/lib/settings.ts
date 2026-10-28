@@ -33,20 +33,22 @@ export const DEFAULT_SETTINGS = {
     "Soins de qualité à coût abordable, dans l'esprit du service et de la solidarité.",
   presentation:
     "Nous sommes une structure sanitaire créée en 1974 par les Religieux Camilliens, dans le but d'offrir des soins à la population de Zinvié et ses environs. Structure confessionnelle, l'hôpital répond aux normes et offre des soins de qualité à un coût très abordable dans toutes ses dimensions : morale, spirituelle et physique.",
-  addressLine1: "Yêvié, Route de Zinvié",
-  addressLine2: "Commune d'Abomey-Calavi — Département de l'Atlantique, Bénin",
-  addressLine3: "Code postal RN31 — 40 km de Cotonou, à 1 h de l'aéroport",
-  phone: "+229 97 21 48 39",
-  phoneSecondary: "+229 95 88 68 53",
-  phoneEmergency: "+229 64 90 73 73",
+  addressLine1: "BP 40, Zinvié",
+  addressLine2: "Yêvié, Route de Zinvié — Commune d'Abomey-Calavi",
+  addressLine3: "Département de l'Atlantique — République du Bénin",
+  phone: "+229 01 95 88 68 53",
+  phoneSecondary: "+229 01 55 28 18 91",
+  phoneEmergency: "+229 01 95 96 84 00",
   email: "hlacroixdezinvie@yahoo.com",
-  emailSecondary: "hlacroxdezinvie@yahoo.com",
-  emailDirection: "pmariusyabi@yahoo.it",
-  emailLaboratory: "hounk.bru@gmail.com",
-  website: "http://hopitallacroixzinvie.bj/",
-  websiteSecondary: "http://hlacroix-zinvie.net/",
+  emailSecondary: "hlacroixsecretariat@yahoo.com",
+  emailEconomat: "hlacroixzinvie@yahoo.com",
+  ifu: "6200900134806",
+  ifuIssueDate: "10 février 2009",
+  webTv: "Hlacroix TV",
+  website: "http://hlacroix-zinvie.net/",
+  websiteSecondary: "",
   facebook: "https://www.facebook.com/@hlacroixzinvie/",
-  whatsapp: "https://wa.me/22997214839",
+  whatsapp: "https://wa.me/2290195886853",
   mapEmbed:
     "https://www.google.com/maps?q=6.598807,2.363823&z=14&output=embed",
   mapLink:
@@ -89,33 +91,18 @@ export const DEFAULT_SETTINGS = {
   contactChannels: [
     {
       label: "Standard & accueil",
-      value: "+229 97 21 48 39",
+      value: "+229 01 95 88 68 53",
       detail: "Du lundi au vendredi, 8h00 – 16h00",
     },
     {
       label: "Urgences (24h/24)",
-      value: "+229 64 90 73 73",
+      value: "+229 01 95 96 84 00",
       detail: "Adultes et enfants — 7j/7 et 24h/24",
     },
     {
-      label: "Direction de l'hôpital",
-      value: "+229 64 71 44 74",
-      detail: "Père Marius Yabi — Directeur de l'hôpital",
-    },
-    {
-      label: "Banque du sang & laboratoire",
-      value: "+229 94 03 85 01",
-      detail: "Père Bruno Hounkonnou — campagnes de don de sang",
-    },
-    {
-      label: "Mobile & WhatsApp",
-      value: "+229 95 88 68 53",
-      detail: "Écoute, messages et demandes d'information",
-    },
-    {
-      label: "Fax",
-      value: "+229 64 90 73 73",
-      detail: "Courriers administratifs et rapports",
+      label: "Téléphone",
+      value: "+229 01 55 28 18 91",
+      detail: "Accueil de l'hôpital",
     },
   ] as ContactChannel[],
 
@@ -123,22 +110,17 @@ export const DEFAULT_SETTINGS = {
   socialLinks: [
     {
       platform: "facebook",
-      label: "Facebook",
+      label: "Hôpital La Croix Zinvié",
       url: "https://www.facebook.com/@hlacroixzinvie/",
     },
     {
       platform: "whatsapp",
       label: "WhatsApp",
-      url: "https://wa.me/22997214839",
+      url: "https://wa.me/2290195886853",
     },
     {
       platform: "globe",
-      label: "Site officiel",
-      url: "http://hopitallacroixzinvie.bj/",
-    },
-    {
-      platform: "globe",
-      label: "Site secondaire",
+      label: "Site Web de l'hôpital",
       url: "http://hlacroix-zinvie.net/",
     },
     {
@@ -150,11 +132,7 @@ export const DEFAULT_SETTINGS = {
 
   webLinks: [
     {
-      label: "Site officiel de l'hôpital",
-      url: "http://hopitallacroixzinvie.bj/",
-    },
-    {
-      label: "Présentation de l'hôpital (hlacroix-zinvie.net)",
+      label: "Site Web de l'hôpital",
       url: "http://hlacroix-zinvie.net/",
     },
     {
@@ -188,8 +166,10 @@ export type SiteSettings = {
   phoneEmergency: string;
   email: string;
   emailSecondary: string;
-  emailDirection: string;
-  emailLaboratory: string;
+  emailEconomat: string;
+  ifu: string;
+  ifuIssueDate: string;
+  webTv: string;
   website: string;
   websiteSecondary: string;
   facebook: string;

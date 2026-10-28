@@ -723,7 +723,7 @@ async function main() {
     {
       username: process.env.SEED_ADMIN_USER ?? "direction",
       fullName: "Marius Yabi",
-      email: "direction@hlacroixzinvie.bj",
+      email: "hlacroixdezinvie@yahoo.com",
       role: "admin" as const,
       password: requiredSeedPassword("SEED_ADMIN_PASSWORD"),
     },
@@ -919,7 +919,7 @@ async function main() {
         {
           name: "Père Marius Yabi",
           role: "Directeur de l'hôpital",
-          text: "Conduit la stratégie de l'établissement, les partenariats et les campagnes de chirurgie à coût réduit. Contact direct : +229 64 71 44 74 — pmariusyabi@yahoo.it",
+          text: "Conduit la stratégie de l'établissement, les partenariats et les campagnes de chirurgie à coût réduit.",
         },
         {
           name: "Dr Franck Ayodéhou Gandji",

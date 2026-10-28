@@ -91,7 +91,7 @@ export function ConsultationForm({
         )}
         <p className="mt-5 flex items-center justify-center gap-2 text-sm text-slate-600">
           <Icon name="phone" className="h-4 w-4" />
-          En cas d&apos;urgence, appelez le +229 97 21 48 39 (urgences 24h/24).
+          En cas d&apos;urgence, appelez le +229 01 95 96 84 00 (urgences 24h/24).
         </p>
         <button
           type="button"

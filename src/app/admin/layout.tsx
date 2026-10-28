@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { ReactNode } from "react";
 import { and, eq, sql } from "drizzle-orm";
 
@@ -6,7 +7,7 @@ import { AdminNav, type AdminNavItem } from "@/components/admin/admin-nav";
 import { Icon } from "@/components/icons";
 import { db } from "@/db";
 import { contactMessages, consultationRequests } from "@/db/schema";
-import { getSessionUser, ROLE_LABELS } from "@/lib/auth";
+import { getSessionUser, hasFullAccess, ROLE_LABELS } from "@/lib/auth";
 import { logoutAction } from "./actions";
 
 export const dynamic = "force-dynamic";
@@ -34,6 +35,9 @@ export default async function AdminLayout({ children }: { children: ReactNode })
 
   const nav: AdminNavItem[] = [
     { href: "/admin", label: "Tableau de bord", icon: "activity" },
+    ...(hasFullAccess(user.role)
+      ? [{ href: "/admin/audience", label: "Audience", icon: "globe" as const }]
+      : []),
     { href: "/admin/contenus/accueil", label: "Contenu · Accueil", icon: "building" },
     { href: "/admin/contenus/a-propos", label: "Contenu · À propos", icon: "book" },
     { href: "/admin/services", label: "Services", icon: "hospital" },
@@ -62,9 +66,13 @@ export default async function AdminLayout({ children }: { children: ReactNode })
       <header className="admin-topbar sticky top-0 z-40 border-b border-brand-100">
         <div className="flex h-16 items-center justify-between gap-4 px-4 sm:px-6">
           <Link href="/admin" className="flex items-center gap-3">
-            <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-700 text-white">
-              <Icon name="cross" className="h-5 w-5" strokeWidth={2} />
-            </span>
+            <Image
+              src="/images/logo.jpeg"
+              alt="Logo de l'Hôpital La Croix de Zinvié"
+              width={228}
+              height={220}
+              className="h-10 w-10 rounded-lg object-contain"
+            />
             <span className="hidden leading-tight sm:block">
               <span className="block text-sm font-bold text-brand-900">
                 Espace administration

@@ -9,8 +9,8 @@ export const EMERGENCY_NUMBERS: {
 }[] = [
   {
     label: "Urgences — Hôpital La Croix",
-    number: "+229 97 21 48 39",
-    tel: "+22997214839",
+    number: "+229 01 95 96 84 00",
+    tel: "+2290195968400",
     note: "24h/24 · 7j/7 ·Adultes & enfants",
     icon: "ambulance",
   },
@@ -45,7 +45,7 @@ export const EMERGENCY_NUMBERS: {
 ];
 
 export function whatsappLink(message: string): string {
-  return `https://wa.me/22997214839?text=${encodeURIComponent(message)}`;
+  return `https://wa.me/2290195886853?text=${encodeURIComponent(message)}`;
 }
 
 export function EmergencyPanel({
@@ -95,7 +95,7 @@ export function EmergencyPanel({
             Le service des urgences de l&apos;hôpital « La Croix » de Zinvié
             est assuré en permanence. En cas d&apos;urgence vitale, appelez le{" "}
             <strong className={dark ? "text-white" : "text-brand-800"}>
-              97 21 48 39
+              01 95 96 84 00
             </strong>{" "}
             ou rapprochez-vous directement du service.
           </p>

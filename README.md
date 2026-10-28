@@ -64,19 +64,17 @@ l'établissement :
   puis transformé en hôpital en **1980** ; structure confessionnelle avec
   **aumônerie permanente** ; 40 km de Cotonou, département de l'Atlantique,
   commune d'Abomey-Calavi, arrondissement de Zinvié.
-- **Coordonnées réelles** — Yêvié, Route de Zinvié (RN31,Atlantique) ·
+- **Coordonnées communiquées par l'établissement** — BP 40, Zinvié,
+  République du Bénin · Yêvié, Route de Zinvié ·
   GPS `6.598807, 2.363823` · Plus code `H9W6+6P` :
-  - Standard & accueil : **+229 97 21 48 39**
-  - Mobile & WhatsApp : **+229 95 88 68 53**
-  - Urgences / fax : **+229 64 90 73 73**
-  - Direction (Père Marius Yabi) : **+229 64 71 44 74** — `pmariusyabi@yahoo.it`
-  - Banque du sang & laboratoire (Père Bruno Hounkonnou) : **+229 94 03 85 01** —
-    `hounk.bru@gmail.com`
-  - E-mails : `hlacroixdezinvie@yahoo.com` (officiel),
-    `hlacroxdezinvie@yahoo.com` (secrétariat)
-  - Sites : `hopitallacroixzinvie.bj` (officiel), `hlacroix-zinvie.net`
-  - Facebook : **facebook.com/@hlacroixzinvie** (2,8 K mentions J'aime,
-    3,5 K abonnés)
+  - Téléphones : **+229 01 95 88 68 53**, **+229 01 55 28 18 91**,
+    **+229 01 95 96 84 00** (numéro des urgences affiché)
+  - Direction : `hlacroixdezinvie@yahoo.com`
+  - Secrétariat : `hlacroixsecretariat@yahoo.com`
+  - Économat : `hlacroixzinvie@yahoo.com`
+  - IFU : **6200900134806**, délivré le 10 février 2009
+  - Site Web : `http://hlacroix-zinvie.net/` · Web TV : **Hlacroix TV**
+  - Facebook : **Hôpital La Croix Zinvié**
 - **Horaires** — consultations du lundi au vendredi 8h00 – 16h00, urgences
   24h/24 et 7j/7, campagnes de don de sang le samedi.
 - **Direction** — Père Marius Yabi (Directeur de l'hôpital),
@@ -130,6 +128,7 @@ hamburger, responsive (mobile / tablette / ordinateur), 3 clics maximum.
 | **Numéros d'urgence** | Accueil & `/contact` | Urgences de l'hôpital 24h/24, SAMU 114, Police 166, Gendarmerie 128, Protection civile 118, avec les gestes de premiers secours et accès direct à l'appel |
 | **Fiche pratique imprimable** | `/fiche-imprimable` | Format A4 prêt à imprimer : services, horaires, contacts, urgences, plan d'accès (CSS `@media print` dédié) |
 | **Barres de progression des dons** | `/dons` | Avancement réel de chaque besoin (collecte vs objectif) et compteurs animés |
+| **Audience du site** | `/admin/audience` | Pages vues par jour et pages les plus consultées sur 30 jours, sans cookie ni collecte d'adresse IP |
 | **Notifications e-mail** | Back-office | Chaque nouvelle demande, message ou don déclenche une notification à la direction (API Resend si `RESEND_API_KEY` est défini, sinon journalisation locale) |
 | **WhatsApp pré-rempli** | Contact & accueil | Messages pré-rédigés pour une prise de contact rapide depuis un mobile |
 
@@ -137,6 +136,8 @@ hamburger, responsive (mobile / tablette / ordinateur), 3 clics maximum.
 
 - **Tableau de bord** — demandes en attente, messages non lus, dons confirmés,
   actualités publiées, archives, raccourcis.
+- **Audience** (`/admin/audience`, administrateurs uniquement) — pages vues
+  aujourd'hui, évolution quotidienne sur 30 jours et pages les plus consultées.
 - **Contenus** — Accueil (`/admin/contenus/accueil`), À propos
   (`/admin/contenus/a-propos` : mission, vision, direction, frise
   chronologique, valeurs), Services, Médecins, Actualités, FAQ.
@@ -178,6 +179,10 @@ seuls les brouillons dépubliés le sont.
   aucune route d'API back-office publique.
 - Secrets uniquement via `process.env` (clé FedaPay jamais exposée au
   navigateur).
+- **Audience agrégée** : seules la date, la page publique et le nombre de vues
+  sont enregistrés ; aucun cookie, identifiant visiteur, adresse IP, paramètre
+  d'URL ou contenu de formulaire n'est conservé. Les pages d'administration sont
+  exclues. Les statistiques mesurent des pages vues, pas des personnes uniques.
 - Le webhook FedaPay **re-vérifie le statut auprès de l'API FedaPay** avant
   de valider un don (source de vérité serveur).
 
@@ -186,7 +191,7 @@ seuls les brouillons dépubliés le sont.
 `users`, `sessions`, `pages`, `services`, `doctors`, `news`, `faqs`,
 `timeline_entries`, `hospital_values`, `donation_needs`,
 `consultation_requests`, `donations`, `contact_messages`, `archives`,
-`site_settings` — 15 tables définies dans `src/db/schema.ts`.
+`site_settings`, `page_views` — 16 tables définies dans `src/db/schema.ts`.
 
 ```
 Service ──┬── Médecin ──► Page publique

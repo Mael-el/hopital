@@ -87,7 +87,7 @@ export async function notifyNewConsultationRequest(data: {
   preferredDate: string | null;
   reason: string;
 }) {
-  const to = process.env.MAIL_TO_ADMIN ?? "direction@hlacroixzinvie.bj";
+  const to = process.env.MAIL_TO_ADMIN ?? "hlacroixdezinvie@yahoo.com";
   await sendMail({
     to,
     subject: `Nouvelle demande de consultation — ${data.fullName} (${data.serviceLabel})`,
@@ -113,7 +113,7 @@ export async function notifyNewContactMessage(data: {
   subject: string;
   message: string;
 }) {
-  const to = process.env.MAIL_TO_ADMIN ?? "direction@hlacroixzinvie.bj";
+  const to = process.env.MAIL_TO_ADMIN ?? "hlacroixdezinvie@yahoo.com";
   await sendMail({
     to,
     subject: `Nouveau message de contact — ${data.subject}`,
@@ -135,7 +135,7 @@ export async function notifyNewDonation(data: {
   amount: number;
   purpose: string;
 }) {
-  const to = process.env.MAIL_TO_ADMIN ?? "direction@hlacroixzinvie.bj";
+  const to = process.env.MAIL_TO_ADMIN ?? "hlacroixdezinvie@yahoo.com";
   await sendMail({
     to,
     subject: `Nouveau don — ${data.amount} FCFA (${data.reference})`,

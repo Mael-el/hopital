@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
+import { PublicPageTracker } from "@/components/public/page-tracker";
 
 /**
  * Affiche l'en-tête / le pied de page du site public sur toutes les pages
@@ -26,6 +27,7 @@ export function Chrome({
 
   return (
     <>
+      <PublicPageTracker />
       {/* Lien d'évitement pour la navigation au clavier */}
       <a
         href="#contenu"

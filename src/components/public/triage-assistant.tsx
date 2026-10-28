@@ -476,9 +476,9 @@ export function TriageAssistant() {
 
             <div className="mt-6 flex flex-col gap-2.5">
               {outcome.level === "critique" ? (
-                <a href="tel:+22997214839" className="btn btn-accent w-full">
+                <a href="tel:+2290195968400" className="btn btn-accent w-full">
                   <Icon name="phone" className="h-4 w-4" />
-                  Appeler les urgences : +229 97 21 48 39
+                  Appeler les urgences : +229 01 95 96 84 00
                 </a>
               ) : (
                 <Link href={consultationHref} className="btn btn-primary w-full">
@@ -486,7 +486,7 @@ export function TriageAssistant() {
                   Demander une consultation dans ce service
                 </Link>
               )}
-              <a href="tel:+22997214839" className="btn btn-ghost w-full">
+              <a href="tel:+2290195968400" className="btn btn-ghost w-full">
                 <Icon name="phone" className="h-4 w-4" />
                 Appeler l&rsquo;accueil
               </a>

@@ -200,7 +200,7 @@ export function SearchDialog() {
                     Aucun résultat pour « {query} »
                   </p>
                   <p className="mt-1 text-sm text-slate-500">
-                    Essayez « chirurgie », « urgence » ou appelez-nous au +229 97 21 48 39.
+                    Essayez « chirurgie », « urgence » ou appelez-nous au +229 01 95 96 84 00.
                   </p>
                 </div>
               ) : (

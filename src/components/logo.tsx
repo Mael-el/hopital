@@ -1,12 +1,17 @@
+import Image from "next/image";
 import Link from "next/link";
-import { Icon } from "./icons";
 
 export function Logo({ compact = false }: { compact?: boolean }) {
   return (
-    <Link href="/" className="group flex items-center gap-1.5 sm:gap-3">
-      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-brand-800 text-white transition-colors group-hover:bg-cross-600 sm:h-11 sm:w-11">
-        <Icon name="cross" className="h-5 w-5" strokeWidth={2.2} />
-      </span>
+    <Link href="/" aria-label="Hôpital La Croix de Zinvié — Accueil" className="group flex items-center gap-1.5 sm:gap-3">
+      <Image
+        src="/images/logo.jpeg"
+        alt="Logo de l'Hôpital La Croix de Zinvié"
+        width={228}
+        height={220}
+        priority
+        className="h-9 w-9 shrink-0 rounded-lg object-contain sm:h-11 sm:w-11"
+      />
       {!compact && (
         <span className="leading-tight">
           <span className="block whitespace-nowrap font-serif text-[0.875rem] font-bold text-brand-900 sm:text-xl">
