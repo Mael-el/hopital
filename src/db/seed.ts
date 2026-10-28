@@ -719,7 +719,8 @@ const DONATION_NEEDS = [
 ];
 
 async function main() {
-  const accounts = [
+  const contentOnly = process.argv.includes("--content-only");
+  const accounts = contentOnly ? [] : [
     {
       username: process.env.SEED_ADMIN_USER ?? "direction",
       fullName: "Marius Yabi",
@@ -750,35 +751,85 @@ async function main() {
     },
   ];
 
-  if (new Set(accounts.map((account) => account.password)).size !== accounts.length) {
+  if (
+    !contentOnly &&
+    new Set(accounts.map((account) => account.password)).size !== accounts.length
+  ) {
     throw new Error("Each seed account must have a different password");
   }
 
   console.log("→ Initialisation de la base de données…");
-  const existingData = await db.execute<{ has_data: boolean }>(sql`
-    SELECT (
-      EXISTS (SELECT 1 FROM archives) OR
-      EXISTS (SELECT 1 FROM contact_messages) OR
-      EXISTS (SELECT 1 FROM donations) OR
-      EXISTS (SELECT 1 FROM consultation_requests) OR
-      EXISTS (SELECT 1 FROM donation_needs) OR
-      EXISTS (SELECT 1 FROM faqs) OR
-      EXISTS (SELECT 1 FROM news) OR
-      EXISTS (SELECT 1 FROM doctors) OR
-      EXISTS (SELECT 1 FROM services) OR
-      EXISTS (SELECT 1 FROM timeline_entries) OR
-      EXISTS (SELECT 1 FROM hospital_values) OR
-      EXISTS (SELECT 1 FROM pages) OR
-      EXISTS (SELECT 1 FROM site_settings) OR
-      EXISTS (SELECT 1 FROM sessions) OR
-      EXISTS (SELECT 1 FROM users)
-    ) AS has_data
-  `);
+  if (contentOnly) {
+    const existingContent = await db.execute<{ has_data: boolean }>(sql`
+      SELECT (
+        EXISTS (SELECT 1 FROM archives) OR
+        EXISTS (SELECT 1 FROM contact_messages) OR
+        EXISTS (SELECT 1 FROM donations) OR
+        EXISTS (SELECT 1 FROM consultation_requests) OR
+        EXISTS (SELECT 1 FROM donation_needs) OR
+        EXISTS (SELECT 1 FROM faqs) OR
+        EXISTS (SELECT 1 FROM news) OR
+        EXISTS (SELECT 1 FROM doctors) OR
+        EXISTS (SELECT 1 FROM services) OR
+        EXISTS (SELECT 1 FROM timeline_entries) OR
+        EXISTS (SELECT 1 FROM hospital_values) OR
+        EXISTS (SELECT 1 FROM pages) OR
+        EXISTS (SELECT 1 FROM site_settings)
+      ) AS has_data
+    `);
+    if (existingContent.rows[0]?.has_data) {
+      throw new Error(
+        "Content seed refused: application content already exists. Use an empty content database.",
+      );
+    }
 
-  if (existingData.rows[0]?.has_data) {
-    throw new Error(
-      "Seed refused: the database already contains application data. Use a new empty database.",
+    const requiredAccounts = [
+      { username: "direction", role: "admin" },
+      { username: "contenus", role: "content" },
+      { username: "demandes", role: "requests" },
+      { username: "developpeur", role: "developer" },
+    ];
+    const existingAccounts = await db
+      .select({ username: users.username, role: users.role, active: users.active })
+      .from(users);
+    const accountsReady = requiredAccounts.every((required) =>
+      existingAccounts.some(
+        (account) =>
+          account.username === required.username &&
+          account.role === required.role &&
+          account.active,
+      ),
     );
+    if (!accountsReady) {
+      throw new Error(
+        "Content seed refused: the four active admin accounts with expected roles must exist first.",
+      );
+    }
+  } else {
+    const existingData = await db.execute<{ has_data: boolean }>(sql`
+      SELECT (
+        EXISTS (SELECT 1 FROM archives) OR
+        EXISTS (SELECT 1 FROM contact_messages) OR
+        EXISTS (SELECT 1 FROM donations) OR
+        EXISTS (SELECT 1 FROM consultation_requests) OR
+        EXISTS (SELECT 1 FROM donation_needs) OR
+        EXISTS (SELECT 1 FROM faqs) OR
+        EXISTS (SELECT 1 FROM news) OR
+        EXISTS (SELECT 1 FROM doctors) OR
+        EXISTS (SELECT 1 FROM services) OR
+        EXISTS (SELECT 1 FROM timeline_entries) OR
+        EXISTS (SELECT 1 FROM hospital_values) OR
+        EXISTS (SELECT 1 FROM pages) OR
+        EXISTS (SELECT 1 FROM site_settings) OR
+        EXISTS (SELECT 1 FROM sessions) OR
+        EXISTS (SELECT 1 FROM users)
+      ) AS has_data
+    `);
+    if (existingData.rows[0]?.has_data) {
+      throw new Error(
+        "Seed refused: the database already contains application data. Use a new empty database.",
+      );
+    }
   }
 
   /* ---------------------------- Utilisateurs ---------------------------- */
@@ -943,6 +994,7 @@ async function main() {
     value: DEFAULT_SETTINGS as unknown as Record<string, unknown>,
   });
 
+  if (!contentOnly) {
   /* --------------------- Données de démonstration (back) ------------------ */
   const [medecineGenerale] = await db
     .select({ id: services.id })
@@ -1053,8 +1105,13 @@ async function main() {
       createdAt: new Date("2026-01-30T14:10:00Z"),
     },
   ]);
+  }
 
-  console.log("✓ Base initialisée avec succès.");
+  console.log(
+    contentOnly
+      ? "✓ Contenu du site initialisé ; les comptes existants ont été conservés."
+      : "✓ Base initialisée avec succès.",
+  );
   await pool.end();
 }
 
