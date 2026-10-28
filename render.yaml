@@ -14,4 +14,14 @@ services:
       - key: FEDAPAY_ENV
         value: sandbox
       - key: DATABASE_URL
-        sync: false
+        fromDatabase:
+          name: hopital-lacroix-demo-db
+          property: connectionString
+
+databases:
+  - name: hopital-lacroix-demo-db
+    databaseName: hopital_lacroix_demo
+    user: hopital_lacroix_demo
+    plan: free
+    region: frankfurt
+    postgresMajorVersion: "16"

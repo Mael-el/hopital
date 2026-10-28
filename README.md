@@ -22,7 +22,10 @@ npm run db:seed                # chargement des données de démonstration
 npm run dev                   # http://localhost:3000
 ```
 
-Renseigner dans `.env` les URL PostgreSQL et les quatre mots de passe de seed. Ne jamais publier ce fichier. Neon fournit une URL poolée pour l’application (`DATABASE_URL`) et une URL directe (`DATABASE_URL_UNPOOLED`) pour Drizzle.
+Renseigner dans `.env` l'URL de connexion PostgreSQL et les quatre mots de passe
+de seed. Ne jamais publier ce fichier. Pour la démo Render, utiliser l'URL
+externe de la base pour initialiser le schéma et charger les données depuis sa
+machine ; le service Render reçoit automatiquement l'URL interne.
 
 Le seed vérifie d'abord que les tables applicatives sont vides et s'arrête si
 elles contiennent des données : il ne réinitialise ni ne supprime aucune table.
@@ -222,30 +225,29 @@ src/
    site fréquente par l'administrateur ; procédure de restauration à tester.
 5. PostgreSQL 15 avec RLS recommandé et accès restreint à l'application.
 
-### Démo gratuite avec Render + Neon
+### Démo gratuite entièrement sur Render
 
-1. Créer un nouveau projet Neon. Copier l'URL **pooled** dans
-   `DATABASE_URL`, et l'URL **direct** dans `DATABASE_URL_UNPOOLED`. Conserver
-   `sslmode=require` dans les deux URL.
-2. Créer `.env` à partir de `.env.example`, puis remplacer tous les exemples.
-   Choisir quatre mots de passe admin aléatoires et distincts (16 caractères
-   minimum).
-3. Sur cette base Neon neuve, exécuter `npm run db:push`, puis
-   `npm run db:seed`. Le seed refuse les bases qui contiennent déjà des données
-   et ne doit être lancé qu'une seule fois.
-4. Publier le code sur un dépôt GitHub privé contenant `render.yaml`, puis
-   ouvrir le Blueprint dans le Dashboard Render. Choisir le plan gratuit et
-   renseigner `DATABASE_URL` avec l'URL poolée Neon lorsqu'il est demandé.
-   Render détecte Next.js et utilise `/api/health` pour vérifier l'application.
-5. Après le premier déploiement, définir `NEXT_PUBLIC_SITE_URL` à l'URL
+1. Le Blueprint `render.yaml` crée le service web et une base PostgreSQL
+   Render gratuite dans la même région. Le service reçoit automatiquement
+   `DATABASE_URL` depuis la base : aucune URL de base n'est à saisir dans
+   l'environnement du service.
+2. Créer `.env` à partir de `.env.example`, puis renseigner l'URL **External
+   Database URL** affichée dans Render → base PostgreSQL → Connect. Choisir
+   quatre mots de passe admin aléatoires et distincts (16 caractères minimum).
+3. Depuis la machine locale, exécuter une seule fois `npm run db:push`, puis
+   `npm run db:seed`. Le seed refuse les bases qui contiennent déjà des données.
+   Ne pas placer les mots de passe `SEED_*` dans Render.
+4. Le service Render utilise `/api/health` pour vérifier l'application.
+   Après le premier déploiement, définir `NEXT_PUBLIC_SITE_URL` à l'URL
    `https://...onrender.com` du site et redéployer pour que les métadonnées et le
    sitemap utilisent l'adresse de la démo.
 
-Ne pas ajouter les variables `SEED_*_PASSWORD` dans Render : elles ne servent
-qu'au chargement initial depuis un environnement local sécurisé. Ne pas saisir
-de vraies données de patients ni activer les paiements réels sur cette démo.
-Les offres gratuites peuvent mettre la base en veille et ne fournissent pas les
-garanties de sauvegarde ou de disponibilité nécessaires à un service hospitalier.
+La base Render gratuite est limitée à 1 Go, sans sauvegardes, et expire après
+30 jours (puis les données sont supprimées après la période de grâce). Le site
+gratuit s'endort après 15 minutes sans trafic et peut mettre environ une minute
+à redémarrer. Ne pas saisir de vraies données de patients ni activer les
+paiements réels sur cette démo. Cette offre ne fournit pas les garanties de
+sauvegarde ou de disponibilité nécessaires à un service hospitalier.
 
 ## 9. Gestion des pannes
 
