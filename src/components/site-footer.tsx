@@ -214,6 +214,26 @@ export async function SiteFooter() {
                 Espace administration
               </Link>
             </p>
+            <p className="flex flex-wrap items-center justify-center gap-2 border-white/10 md:border-l md:pl-6">
+              <Icon name="sparkles" className="h-3.5 w-3.5 text-brand-300" />
+              <span>
+                Conçu &amp; maintenu par Ismail ET Simon Jude AGOHOUNDJE —{" "}
+                <a
+                  href="mailto:ismailagohoundje14@gmail.com"
+                  className="transition hover:text-white"
+                >
+                  ismailagohoundje14@gmail.com
+                </a>{" "}
+                ·{" "}
+                <a href="tel:0161791967" className="transition hover:text-white">
+                  01 61 79 19 67
+                </a>{" "}
+                /{" "}
+                <a href="tel:0197766645" className="transition hover:text-white">
+                  01 97 76 66 45
+                </a>
+              </span>
+            </p>
           </div>
         </div>
       </div>
